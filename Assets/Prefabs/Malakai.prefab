@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1366319692224036795}
-  m_LocalRotation: {x: 0.0072751096, y: -0, z: -0, w: 0.99997354}
+  m_LocalRotation: {x: 0.007277918, y: 0, z: 0, w: 0.99997354}
   m_LocalPosition: {x: -0.8219, y: -0.3034, z: -0.013}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -128,6 +128,10 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  healthBar: {fileID: 0}
+  progressBar: {fileID: 0}
+  maxPoints: 100
+  currentPoints: 0
 --- !u!61 &1366319692224036785
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -137,7 +141,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1366319692224036795}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 65747daebd2532745b043329d4ddb425, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
