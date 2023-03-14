@@ -2,21 +2,30 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // for our game logic
-    [SerializeField] private float speed = 8f;
-    [SerializeField] private float maxHealth = 100.0f;
-    [SerializeField] private float attackPointValue = 3f;
-    [SerializeField] private float jumpingPower = 3f;
-    [SerializeField] private LayerMask groundLayer;
+    // For setting health and progress
+    public HealthBar healthBar;
+    public ProgressBar progressBar;
+    public int maxPoints = 100;
+    public int currentPoints = 0;
+    public int maxHealth = 100;
+    private int currentHealth;
 
-    // for the game engine
+    // For player attacks
+    public float attackPointValue = 3f;
+
+    // For controlling player movement
+    public float speed = 8f;
+    public float jumpingPower = 3f;
+    public float jumpCooldown = 1f;
+    public LayerMask groundLayer;
     private float horizontal;
     private bool isFacingRight = true;
+    private float jumpTime;
+
+    // Additional Unity components
     private Animator anim;
     private BoxCollider2D boxCollider;
     private Rigidbody2D rb;
-    private float jumpCooldown;
-
 
     private void Awake()
     {
@@ -26,8 +35,18 @@ public class PlayerMovement : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
     }
 
+    private void Start()
+    {
+        // Initialize health and progress bars
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+        progressBar.SetMaxPoints(maxPoints);
+
+    }
+
     void Update()
     {
+        // Get player input for horizontal direction
         horizontal = Input.GetAxisRaw("Horizontal");
 
         // Set animator params
@@ -35,29 +54,21 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("grounded", IsGrounded());
 
         // Jump logic
-        if (jumpCooldown > 1f)
+        if (jumpTime > jumpCooldown && Input.GetKey(KeyCode.Space) && IsGrounded())
         {
-            if (Input.GetKey(KeyCode.Space) && IsGrounded())
-            {
                 print("JUMPING");
                 rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
                 anim.SetTrigger("jump");
-                jumpCooldown = 0;
-            }
+                jumpTime = 0;
         } else
         {
-            jumpCooldown += Time.deltaTime;
+            jumpTime += Time.deltaTime;
         }
 
+        // Update the health bar and progress bar
+        healthBar.SetHealth(currentHealth);
+        progressBar.SetPoints(currentPoints);
 
-        /*
-        if (rb.velocity.y > 0f)
-        {
-            print("FALLING");
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-            // anim.SetTrigger("fall")
-        }
-        */
         // Flip the player when moving left-right
         Flip();
     }
@@ -83,5 +94,17 @@ public class PlayerMovement : MonoBehaviour
             localScale.x *= -1f;
             transform.localScale = localScale;
         }
+    }
+
+    // Accessed by enemy attack scripts to give damage to player
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+    }
+
+    // Accessed by enemy scripts when they die to award their point amount to the player
+    public void TakePoints(int points)
+    {
+        currentPoints += points;
     }
 }
