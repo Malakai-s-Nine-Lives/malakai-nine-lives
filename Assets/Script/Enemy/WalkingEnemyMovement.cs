@@ -5,8 +5,8 @@ using UnityEngine;
 public class WalkingEnemyMovement : MonoBehaviour
 {
     public Transform player;  // To react to player movement
-    [SerializeField] public int damage = 25;  // Damage value for enemy
-    [SerializeField] public float moveSpeed = 0.5f;  // Speed of enemy
+    public int damage = 25;  // Damage value for enemy
+    public float moveSpeed = 0.5f;  // Speed of enemy
 
     // Get the movement for the enemy
     private Rigidbody2D enemy_body;
