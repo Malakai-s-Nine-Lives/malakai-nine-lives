@@ -11,6 +11,7 @@ public class FlyingEnemyMovement : MonoBehaviour
     // Get the movement for the enemy
     private Rigidbody2D enemy_body;
     private Vector2 movement;
+    private float rotation_angle;
 
     // Booleans for the rotation direction of the flying enemy
     private bool facingLeft;
@@ -60,9 +61,9 @@ public class FlyingEnemyMovement : MonoBehaviour
         // Rotate by caluclated angle to face player
         Vector3 direction = player.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        enemy_body.rotation = angle;
         direction.Normalize();
         movement = direction;
+        rotation_angle = angle;
         Flip(movement);  // Flip the image to match the direction rotated
 
     }
@@ -75,6 +76,7 @@ public class FlyingEnemyMovement : MonoBehaviour
     // Move enemy position based on where the player is
     private void MoveEnemy(Vector2 direction)
     {
+        enemy_body.rotation = rotation_angle;
         enemy_body.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
     }
 
