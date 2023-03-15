@@ -167,3 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae92703d30735244ace36049e90b575, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1366319692224036798, guid: 84831f2c64ae32044999a81d7ec2efe4, type: 3}
+  damage: 50
+  moveSpeed: 0.5
+  maxHealth: 100
