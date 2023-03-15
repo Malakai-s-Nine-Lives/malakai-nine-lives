@@ -121,17 +121,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 771d3d2e061f1e14c8309db76289cc00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  healthBar: {fileID: 669943802464946156, guid: fe6170336989e64408acd3977f636aef, type: 3}
+  progressBar: {fileID: 2257978078779232497, guid: 5f671a2384173b042887f9731138d1d7, type: 3}
+  maxPoints: 100
+  currentPoints: 0
   maxHealth: 100
   attackPointValue: 3
+  speed: 1
   jumpingPower: 3
+  jumpCooldown: 1
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  healthBar: {fileID: 0}
-  progressBar: {fileID: 0}
-  maxPoints: 100
-  currentPoints: 0
 --- !u!61 &1366319692224036785
 BoxCollider2D:
   m_ObjectHideFlags: 0
