@@ -52,6 +52,8 @@ public class FlyingEnemyMovement : MonoBehaviour
         {
             facingdown = false;
         }
+
+        Flip(direction); // Get correct position initially
        
     }
 
@@ -93,6 +95,7 @@ public class FlyingEnemyMovement : MonoBehaviour
                 sprite_render.flipX = false;
                 facingdown = true;
                 facingLeft = true;
+                Debug.Log("Q4");
             }
         }
         else if (!IsDown(movement) && !IsLeft(movement))  // Quadrant 2
@@ -103,6 +106,7 @@ public class FlyingEnemyMovement : MonoBehaviour
                 sprite_render.flipX = false;
                 facingdown = false;
                 facingLeft = false;
+                Debug.Log("Q2");
             }
         }
         else if (!IsDown(movement) && IsLeft(movement))  // Quadrant 3
@@ -113,6 +117,7 @@ public class FlyingEnemyMovement : MonoBehaviour
                 sprite_render.flipX = false;
                 facingdown = false;
                 facingLeft = true;
+                Debug.Log("Q3");
             }
         }
         else if (IsDown(movement) && !IsLeft(movement))  // Quadrant 1
@@ -123,6 +128,7 @@ public class FlyingEnemyMovement : MonoBehaviour
                 sprite_render.flipX = false;
                 facingdown = true;
                 facingLeft = false;
+                Debug.Log("Q1");
             }
         }
     }
