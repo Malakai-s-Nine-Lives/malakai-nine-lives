@@ -58,3 +58,7 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# User Generated files
+SampleScene.unity
+EditorUserSettings.asset
+default-2021.dwlt
