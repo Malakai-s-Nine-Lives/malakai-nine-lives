@@ -13,6 +13,12 @@ public class FlyingEnemyMovement : MonoBehaviour
     private Vector2 movement;
     private float rotation_angle;
 
+    // These are used for pathfinding
+    Vector2[] path;
+    private int targetIndex;
+
+    private Vector2 playerPos;  // Store Player position
+
     // Booleans for the rotation direction of the flying enemy
     private bool facingLeft;
     private bool facingdown;
@@ -34,6 +40,7 @@ public class FlyingEnemyMovement : MonoBehaviour
         // Get position of player
         Vector3 direction = player.position - transform.position;
         direction.Normalize();
+        playerPos = player.position;
 
         // Initialize the left and down values depending on current enemy
         // rotation
@@ -52,7 +59,12 @@ public class FlyingEnemyMovement : MonoBehaviour
         {
             facingdown = false;
         }
-       
+
+        Flip(direction); // Get correct position initially
+
+        // Initially request A* to attack teh player
+        PathRequest.RequestPath(transform.position, player.position, OnPathFound);
+
     }
 
     // Update is called once per frame
@@ -70,14 +82,51 @@ public class FlyingEnemyMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MoveEnemy(movement);  // Have enemy follow player
+        if (playerPos != (Vector2) player.position)  // If player has moved
+        {
+            // Get an optimal path of attack
+            PathRequest.RequestPath(transform.position, player.position, OnPathFound);
+            playerPos = player.position;  // Update player's current position
+        }
     }
 
-    // Move enemy position based on where the player is
-    private void MoveEnemy(Vector2 direction)
+    public void OnPathFound(Vector2[] newPath, bool pathSuccessful)
     {
-        enemy_body.rotation = rotation_angle;
-        enemy_body.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+        if (pathSuccessful)  // Successful path found
+        {
+            path = newPath;
+            targetIndex = 0;
+            StopCoroutine("FollowPath");  // Stop moving if we were before
+            StartCoroutine("FollowPath");  // Attack with newly found path
+        }
+    }
+
+    IEnumerator FollowPath()
+    {
+        if (path.Length > 0)  // Only move if we have somewhere to move
+        {
+            Vector2 currentWaypoint = path[0];  // Get the waypoint to move to
+            while (true)
+            {
+                // Make sure we have made the previous move
+                if ((Vector2)transform.position == currentWaypoint)
+                {
+                    targetIndex++;  // Where we plan to go
+                    if (targetIndex >= path.Length)
+                    {
+                        yield break;
+                    }
+                    currentWaypoint = path[targetIndex];
+                }
+
+                enemy_body.rotation = rotation_angle;  // Rotate enemy based on direction of travel
+
+                // Move
+                transform.position = (Vector2) Vector2.MoveTowards((Vector2) transform.position, currentWaypoint, moveSpeed * Time.deltaTime);
+                yield return null;
+
+            }
+        }
     }
 
     // Flip the direction based on the quadrant the rotation is
