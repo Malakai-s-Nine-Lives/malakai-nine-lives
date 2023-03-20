@@ -6,9 +6,7 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private int _easy_mode = 1;
-    public Button easy_mode_button;
-    public Button hard_mode_button;
+    [SerializeField] private int _easy_mode = 1;  // Store the mode we are playing
 
     public int easy_mode
     {
@@ -16,26 +14,14 @@ public class MainMenu : MonoBehaviour
         set { _easy_mode = value; }
     }
 
-    public void PlayGame()
+    public void PlayGame()  // Load first level if play
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void QuitGame()
+    public void QuitGame()  // Quit game
     {
         Debug.Log("Quitted!");
         Application.Quit();
-    }
-
-    public void SettingsButton()
-    {
-        if (easy_mode == 1)
-        {
-            easy_mode_button.Select();
-        }
-        else
-        {
-            hard_mode_button.Select();
-        }
     }
 }
