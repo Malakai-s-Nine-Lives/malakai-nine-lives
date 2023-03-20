@@ -122,7 +122,7 @@ public class FlyingEnemyMovement : MonoBehaviour
                 enemy_body.rotation = rotation_angle;  // Rotate enemy based on direction of travel
 
                 // Move
-                transform.position = Vector2.MoveTowards(transform.position, currentWaypoint, moveSpeed * Time.deltaTime);
+                transform.position = (Vector2) Vector2.MoveTowards((Vector2) transform.position, currentWaypoint, moveSpeed * Time.deltaTime);
                 yield return null;
 
             }
