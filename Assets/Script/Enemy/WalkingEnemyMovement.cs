@@ -16,6 +16,13 @@ public class WalkingEnemyMovement : MonoBehaviour
     // Booleans for the flipping direction facing
     private bool facingLeft;
 
+    // For Running Bresenham Algorithm
+    // This will turn to true once the enemy spots Malakai
+    private bool activated = false;
+    // The higher the value, the smaller the chance of running the free sight
+    public int freeSightChance = 100;
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,19 +39,25 @@ public class WalkingEnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Rotate by caluclated angle to face player
-        Vector3 direction = player.position - transform.position;
-        direction.Normalize();
-        movement = direction;
-        Flip(movement);  // Flip the image to match the direction to face
+        activated |= Bresenham.determineActivation(freeSightChance, transform.position, player.position);
+        if (activated) {
+            // Rotate by caluclated angle to face player
+            Vector3 direction = player.position - transform.position;
+            direction.Normalize();
+            movement = direction;
+            Flip(movement);  // Flip the image to match the direction to face
 
-        // update animation
-        anim.SetBool("walk", Mathf.Abs(direction[0]) > 0.1);
-    } 
+            // update animation
+            anim.SetBool("walk", Mathf.Abs(direction[0]) > 0.1);
+        }
+    }
 
     private void FixedUpdate()
     {
-        MoveEnemy(movement);  // Have enemy follow player
+        activated |=  Bresenham.determineActivation(freeSightChance, transform.position, player.position);
+        if (activated) {
+            MoveEnemy(movement);  // Have enemy follow player
+        }
     }
 
     // Move enemy position based on where the player is
