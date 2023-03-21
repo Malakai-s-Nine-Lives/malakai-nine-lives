@@ -1163,10 +1163,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlyingEnemy1
       objectReference: {fileID: 0}
+    - target: {fileID: 7412663455509973943, guid: bc0d3848771ecce48900976e85090d82, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7529314698321975969, guid: bc0d3848771ecce48900976e85090d82, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1366319690860775705}
+    - target: {fileID: 7529314698321975969, guid: bc0d3848771ecce48900976e85090d82, type: 3}
+      propertyPath: moveSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc0d3848771ecce48900976e85090d82, type: 3}
 --- !u!1001 &3355266493270640982
@@ -1348,6 +1356,10 @@ PrefabInstance:
     - target: {fileID: 7417852735043141615, guid: 0a9520afeb2343d46864dc50a29ef042, type: 3}
       propertyPath: m_Name
       value: WalkingEnemy1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7417852735043141615, guid: 0a9520afeb2343d46864dc50a29ef042, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a9520afeb2343d46864dc50a29ef042, type: 3}
