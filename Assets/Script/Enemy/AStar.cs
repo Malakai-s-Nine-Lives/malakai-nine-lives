@@ -6,7 +6,7 @@ using UnityEngine;
 public class AStar : MonoBehaviour
 {
     PathRequest requestManager;
-    MapGrid grid;
+    public MapGrid grid;
 
     void Awake()  // Get componenets before start
     {

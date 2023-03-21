@@ -54,4 +54,9 @@ public class Node : IHeapItem<Node>
         }
         return -compare;
     }
+
+    public override string ToString()
+   {    
+        return "Node: index=[" +gridX+","+gridY+"] position=" + this.worldposition + ", walkable=" + this.walkable;
+   }
 }
