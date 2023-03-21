@@ -3,15 +3,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     // For setting health and progress
-    public HealthBar healthBar;
     public ProgressBar progressBar;
     public int maxPoints = 100;
     public int currentPoints = 0;
-    public int maxHealth = 100;
-    private int currentHealth;
-
-    // For player attacks
-    public float attackPointValue = 3f;
 
     // For controlling player movement
     public float speed = 8f;
@@ -37,11 +31,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        // Initialize health and progress bars
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        // Initialize progress bar
         progressBar.SetMaxPoints(maxPoints);
-
     }
 
     void Update()
@@ -54,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("grounded", IsGrounded());
 
         // Jump logic
-        if (jumpTime > jumpCooldown && Input.GetKey(KeyCode.Space) && IsGrounded())
+        if (jumpTime > jumpCooldown && (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && IsGrounded())
         {
                 print("JUMPING");
                 rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
@@ -64,10 +55,6 @@ public class PlayerMovement : MonoBehaviour
         {
             jumpTime += Time.deltaTime;
         }
-
-        // Update the health bar and progress bar
-        healthBar.SetHealth(currentHealth);
-        progressBar.SetPoints(currentPoints);
 
         // Flip the player when moving left-right
         Flip();
@@ -79,12 +66,13 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // use 2D raycasting to determine if player is on the ground
-    private bool IsGrounded()
+    public bool IsGrounded()
     {
         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0.1f, groundLayer);
         return raycastHit.collider != null;
     }
 
+    // Flip the player when it moves in a different direction
     private void Flip()
     {
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
@@ -96,15 +84,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    // Accessed by enemy attack scripts to give damage to player
-    public void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-    }
-
     // Accessed by enemy scripts when they die to award their point amount to the player
     public void TakePoints(int points)
     {
         currentPoints += points;
+        progressBar.SetPoints(currentPoints);
     }
 }
