@@ -138,18 +138,45 @@ public class FlyingEnemyMovement : MonoBehaviour
             if (IsDown(movement) != facingdown || IsLeft(movement) != facingLeft)
             {
                 // Flip and save new direction
-                sprite_render.flipY = true;
-                sprite_render.flipX = false;
+                Vector3 localScale = transform.localScale;
+
+                // Only flip in x if we were in the wrong direction to begin with
+                if (localScale.x < 0)
+                {
+                    localScale.x *= -1f;
+                }
+
+                // Only flip in y if we were in the wrong direction to begin with
+                if (localScale.y > 0)
+                {
+                    localScale.y *= -1f;
+                }
+
+                // Update the scale in case we preformed a flip
+                transform.localScale = localScale;
+
+                // Update bools regardless of what happens to the scales
                 facingdown = true;
                 facingLeft = true;
             }
         }
+
+        // Repeat above described process for the other 3 quadrants
         else if (!IsDown(movement) && !IsLeft(movement))  // Quadrant 2
         {
             if (IsDown(movement) != facingdown || IsLeft(movement) != facingLeft)
             {
-                sprite_render.flipY = false;
-                sprite_render.flipX = false;
+                Vector3 localScale = transform.localScale;
+                if (localScale.x < 0)
+                {
+                    localScale.x *= -1f;
+                }
+                if (localScale.y < 0)
+                {
+                    localScale.y *= -1f;
+                }
+
+                transform.localScale = localScale;
                 facingdown = false;
                 facingLeft = false;
             }
@@ -158,8 +185,17 @@ public class FlyingEnemyMovement : MonoBehaviour
         {
             if (IsDown(movement) != facingdown || IsLeft(movement) != facingLeft)
             {
-                sprite_render.flipY = true;
-                sprite_render.flipX = false;
+                Vector3 localScale = transform.localScale;
+                if (localScale.x < 0)
+                {
+                    localScale.x *= -1f;
+                }
+                if (localScale.y > 0)
+                {
+                    localScale.y *= -1f;
+                }
+
+                transform.localScale = localScale;
                 facingdown = false;
                 facingLeft = true;
             }
@@ -168,8 +204,17 @@ public class FlyingEnemyMovement : MonoBehaviour
         {
             if (IsDown(movement) != facingdown || IsLeft(movement) != facingLeft)
             {
-                sprite_render.flipY = false;
-                sprite_render.flipX = false;
+                Vector3 localScale = transform.localScale;
+                if (localScale.x < 0)
+                {
+                    localScale.x *= -1f;
+                }
+                if (localScale.y < 0)
+                {
+                    localScale.y *= -1f;
+                }
+
+                transform.localScale = localScale;
                 facingdown = true;
                 facingLeft = false;
             }
