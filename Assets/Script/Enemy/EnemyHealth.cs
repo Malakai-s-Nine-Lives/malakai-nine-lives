@@ -4,9 +4,9 @@ public class EnemyHealth : MonoBehaviour
 {
     // For setting health and giving progress points to player
     public int maxHealth = 100;
-    public int pointValue = 10;
+    public int pointValue = 100;
     public float maxCorpseTime = 5f;
-    public PlayerMovement player;
+    public PlayerProgress player;
     private int currentHealth;
     private float corpseTimer = 0;
     public LayerMask groundLayer;

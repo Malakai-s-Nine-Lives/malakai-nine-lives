@@ -5,7 +5,9 @@ public class PlayerAttack : MonoBehaviour
     // For controlling player attack
     public int attackDamage = 25;
     public float attackRange = 0.1f;
+    public float attackCooldown = 0.5f;
     private Transform attackPoint;
+    private float attackTimer = 0f;
 
     // Additional Unity Components
     private Animator anim;
@@ -23,10 +25,13 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         // Attack on mouse click
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && attackTimer > attackCooldown)
         {
             Attack();
+            attackTimer = 0;
         }
+
+        attackTimer += Time.deltaTime;
     }
 
     void Attack()

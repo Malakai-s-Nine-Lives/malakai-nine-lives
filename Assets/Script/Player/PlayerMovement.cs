@@ -2,11 +2,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // For setting health and progress
-    public ProgressBar progressBar;
-    public int maxPoints = 100;
-    public int currentPoints = 0;
-
     // For controlling player movement
     public float speed = 8f;
     public float jumpingPower = 3f;
@@ -29,12 +24,6 @@ public class PlayerMovement : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
     }
 
-    private void Start()
-    {
-        // Initialize progress bar
-        progressBar.SetMaxPoints(maxPoints);
-    }
-
     void Update()
     {
         // Get player input for horizontal direction
@@ -47,7 +36,6 @@ public class PlayerMovement : MonoBehaviour
         // Jump logic
         if (jumpTime > jumpCooldown && (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && IsGrounded())
         {
-                print("JUMPING");
                 rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
                 anim.SetTrigger("jump");
                 jumpTime = 0;
@@ -82,12 +70,5 @@ public class PlayerMovement : MonoBehaviour
             localScale.x *= -1f;
             transform.localScale = localScale;
         }
-    }
-
-    // Accessed by enemy scripts when they die to award their point amount to the player
-    public void TakePoints(int points)
-    {
-        currentPoints += points;
-        progressBar.SetPoints(currentPoints);
     }
 }

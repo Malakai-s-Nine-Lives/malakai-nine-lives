@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1366319692224036786}
   - component: {fileID: 8116733489429133085}
   - component: {fileID: 4017578251031630262}
+  - component: {fileID: 7124806362750407426}
   m_Layer: 0
   m_Name: Malakai
   m_TagString: Untagged
@@ -124,12 +125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 771d3d2e061f1e14c8309db76289cc00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 669943802464946156, guid: fe6170336989e64408acd3977f636aef, type: 3}
   progressBar: {fileID: 2257978078779232497, guid: 5f671a2384173b042887f9731138d1d7, type: 3}
   maxPoints: 100
   currentPoints: 0
-  maxHealth: 100
-  attackPointValue: 3
   speed: 1
   jumpingPower: 3
   jumpCooldown: 1
@@ -194,7 +192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eb966df9a59f214d947d7b108e924f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 1
   attackDamage: 25
   attackRange: 0.1
   enemyLayers:
@@ -214,6 +211,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
   maxHealth: 100
+--- !u!114 &7124806362750407426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366319692224036795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78f0f3dc37f141a49ac2ed2fa27fb428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progressBar: {fileID: 0}
+  maxPoints: 100
+  currentPoints: 0
 --- !u!1 &7043935961497526370
 GameObject:
   m_ObjectHideFlags: 0
