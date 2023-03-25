@@ -21,6 +21,8 @@ public class WalkingEnemyMovement : MonoBehaviour
     private bool activated = false;
     // The higher the value, the smaller the chance of running the free sight
     public int freeSightChance = 100;
+    // how far away the enemy can see
+    public int sightRadius = 5;
     
 
     // Start is called before the first frame update
@@ -39,7 +41,7 @@ public class WalkingEnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        activated |= Bresenham.determineActivation(freeSightChance, transform.position, player.position);
+        activated |= Bresenham.determineActivation(freeSightChance, sightRadius, transform.position, player.position);
         if (activated) {
             // Rotate by caluclated angle to face player
             Vector3 direction = player.position - transform.position;
@@ -54,7 +56,7 @@ public class WalkingEnemyMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        activated |=  Bresenham.determineActivation(freeSightChance, transform.position, player.position);
+        activated |=  Bresenham.determineActivation(freeSightChance, sightRadius, transform.position, player.position);
         if (activated) {
             MoveEnemy(movement);  // Have enemy follow player
         }
