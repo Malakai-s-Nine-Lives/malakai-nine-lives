@@ -51,7 +51,7 @@ public class Bresenham : MonoBehaviour
         
     }
 
-    public static bool determineActivation(int freeSightChance, Vector3 enemy_position, Vector3 player_position){
+    public static bool determineActivation(int freeSightChance, int sightRadius, Vector3 enemy_position, Vector3 player_position){
 
         
         int x0 = (int)camera.WorldToScreenPoint(enemy_position).x;
@@ -63,6 +63,9 @@ public class Bresenham : MonoBehaviour
         // Don't run Bresenham every time
         if (Random.Range(0, freeSightChance) == 0)
         {
+
+            if ((player_position - enemy_position).magnitude > sightRadius) return false;
+
             if (Mathf.Abs(y1-y0) < Mathf.Abs(x1-x0)) {
                 if (x0 > x1) {
                     return plotLineLow(x1, y1, x0, y0);
