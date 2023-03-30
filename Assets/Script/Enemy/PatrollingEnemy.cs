@@ -25,7 +25,7 @@ public class PatrollingEnemy : MonoBehaviour
     public int freeSightChance = 100;
     // how far away the enemy can see
     public int sightRadius = 5;
-    // 
+    
     private bool nextStepIsOnTheGround = false;
     
 
@@ -63,17 +63,20 @@ public class PatrollingEnemy : MonoBehaviour
         activated |=  Bresenham.determineActivation(freeSightChance, sightRadius, transform.position, player.position);
         if (activated && nextStepIsOnTheGround) {
             MoveEnemy(movement);  // Have enemy follow player
+            Debug.Log("Activated and next step IS on the ground");
+            anim.SetBool("walk", true);
         } else if (activated) {
-            // activated but the next step is no longer ground: do nothing
+            Debug.Log("Activated but next step is NOT on the ground");
+            anim.SetBool("walk", false);
         } else {
-            if (IsFacingRight()){
-                // move right
-
-                enemy_body.velocity = new Vector2(moveSpeed, 0f);
-            } else {
-                enemy_body.velocity = new Vector2(-moveSpeed, 0f);
+            if (facingLeft){
                 // move left
+                MoveEnemy(Vector2.left);
+            } else {
+                // move right
+                MoveEnemy(Vector2.right);
             }
+            anim.SetBool("walk", true);
         }
     }
 
@@ -82,99 +85,26 @@ public class PatrollingEnemy : MonoBehaviour
         nextStepIsOnTheGround = false;
         Debug.Log("The collider exited");
         if (activated){
-            // in malakai hunting mode
-            // kill the velocity because enemy is at the edge
-            // enemy_body.velocity = new Vector2(0, 0f);
-            // Debug.Log("Facing right?"); Debug.Log(IsFacingRight());
-            // Node node = grid.NodeFromMapPoint((Vector2)transform.position + new Vector2(-guide.offset.x, guide.offset.y));
-            // Debug.Log(transform.position);
-            // Debug.Log(node);
-            // Debug.Log("Next Step is ground?"); Debug.Log(NextStepIsStillGround());
             Debug.Log(nextStepIsOnTheGround);
-            // nextStepIsOnTheGround = false;
         } else {
             // in patrol mode
-            Node node = grid.NodeFromMapPoint((Vector2)transform.position + guide.offset);
-            // if (IsFacingRight()){
-            //     // move right
-            //     Debug.Log("Facing right");
-            //     node = grid.NodeFromMapPoint((Vector2)transform.position + guide.offset);
-            // } else {
-            //     Debug.Log("Facing left");
-            //     node = grid.NodeFromMapPoint((Vector2)transform.position + new Vector2(-guide.offset.x, guide.offset.y));
-            //     // move left
-            // }
-            Debug.Log(node);
-            guide.offset = new Vector2(-guide.offset.x, guide.offset.y);
-            facingLeft = !facingLeft;
-            transform.localScale = new Vector2(-(Mathf.Sign(enemy_body.velocity.x)), transform.localScale.y);   
+            if (facingLeft){
+                Flip(Vector2.right); // face right
+            } else {
+                Flip(Vector2.left); // face left
+            }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
         nextStepIsOnTheGround = true;
-        if (activated && !IsFacingRight()) Debug.Break();
         Debug.Log("The collider entered");
-    }
-
-    private bool NextStepIsStillGround()
-    {
-        if (IsFacingRight()) {
-            // if the next point is free space (i.e. walkable), it is not ground
-            return !grid.NodeFromMapPoint((Vector2)transform.position + guide.offset).walkable;
-        } else {
-            // Node node = grid.NodeFromMapPoint((Vector2)transform.position + new Vector2(-guide.offset.x, guide.offset.y));
-            // Debug.Log(transform.position);
-            // Debug.Log(node);
-            // Debug.Break();
-            Debug.Log("QWERTYUIOPASDFGHJKLZXCVBNM<");
-            return !grid.NodeFromMapPoint((Vector2)transform.position + new Vector2(guide.offset.x, guide.offset.y)).walkable;
-        }
-    }
-
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere((Vector2)transform.position, 0.5f);
-    }
-
-    private bool IsFacingRight()
-    {
-        return transform.localScale.x > Mathf.Epsilon;
     }
 
     // Move enemy position based on where the player is
     private void MoveEnemy(Vector2 direction)
     {
         enemy_body.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
-        // if (grid.NodeFromMapPoint((Vector2)transform.position + guide.offset).walkable){
-        //     // if the next step is no longer on the platform, don't do anything
-
-        // } else {
-        //     enemy_body.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
-        // }
-        // Node node;
-        // if (IsFacingRight()){
-        //     // move right
-        //     Debug.Log("Facing left");
-        //     node = grid.NodeFromMapPoint((Vector2)transform.position + new Vector2(-guide.offset.x, guide.offset.y));
-        //     if (node.walkable) // at the edge
-        //     {
-        //         // do not move
-        //     } else {
-        //         enemy_body.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
-        //     }
-        // } else {
-        //     Debug.Log("Facing right");
-        //     node = grid.NodeFromMapPoint((Vector2)transform.position + guide.offset);
-        //     // move left
-        //     if (node.walkable) // at the edge
-        //     {
-        //         // do not move
-        //     } else {
-        //         enemy_body.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
-        //     }
-        // }
     }
 
     // Flip the enemy character depending on which direction it is facing
@@ -186,7 +116,8 @@ public class PatrollingEnemy : MonoBehaviour
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;
             transform.localScale = localScale;
-            guide.offset = new Vector2(-guide.offset.x, guide.offset.y);
+            // flipping means going the other way so this would always be true
+            nextStepIsOnTheGround = true;
         }
     }
 }

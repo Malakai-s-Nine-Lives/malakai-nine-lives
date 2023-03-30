@@ -8,17 +8,17 @@ public class WalkingEnemyMovement : MonoBehaviour
     public Transform player;
     public float moveSpeed = 0.5f;
     private Rigidbody2D enemy_body;
-    private Vector2 movement;
+    protected Vector2 movement;
 
     // For animations
-    private Animator anim;
+    protected Animator anim;
 
     // Booleans for the flipping direction facing
-    private bool facingLeft;
+    protected bool facingLeft;
 
     // For Running Bresenham Algorithm
     // This will turn to true once the enemy spots Malakai
-    private bool activated = false;
+    protected bool activated = false;
     // The higher the value, the smaller the chance of running the free sight
     public int freeSightChance = 100;
     // how far away the enemy can see
@@ -54,7 +54,7 @@ public class WalkingEnemyMovement : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         activated |=  Bresenham.determineActivation(freeSightChance, sightRadius, transform.position, player.position);
         if (activated) {
@@ -63,13 +63,13 @@ public class WalkingEnemyMovement : MonoBehaviour
     }
 
     // Move enemy position based on where the player is
-    private void MoveEnemy(Vector2 direction)
+    protected void MoveEnemy(Vector2 direction)
     {
         enemy_body.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
     }
 
     // Flip the enemy character depending on which direction it is facing
-    private void Flip(Vector2 direction)
+    protected virtual void Flip(Vector2 direction)
     {
         if (facingLeft && direction[0] > 0f || !facingLeft && direction[0] <= 0f)
         {
