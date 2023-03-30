@@ -5,43 +5,22 @@ using UnityEngine;
 public class Bresenham : MonoBehaviour
 {
     // for generating chances
-    // private Random rnd = new Random();
-    MapGrid grid;
-    AStar aStar;  // To run A*
+    public static MapGrid grid;
     static Bresenham instance;
-
-    static Collider2D groundColliders;
-    static Collider2D malakaiColliders;
-
+    // for converting between world values and pixels
     private static Camera camera;
-
-    
-    public static Vector2 gridWorldSize;  // The size of our world map
-    static int gridSizeX, gridSizeY;  // Grid sizes
-    static public float nodeRadius; // The radius of each cell (Node) in the grid
-    static float nodeDiameter;  // Diameter of each cell (Node) in the grid
-
     private static float z_value;
-
 
     // Start is called before the first frame update
     void Start()
     {
-        // grid = GetComponent<MapGrid>();
 
-        
     }
     
-    // Start is called before the first frame update
     void Awake()
     {
         instance = this;
-        aStar = GetComponent<AStar>();
-        // groundColliders = GetComponent<Collider2D>();
-        // grid = GetComponent<MapGrid>();
-        nodeDiameter = nodeRadius * 2;
-        gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
-        gridSizeY = Mathf.RoundToInt(gridWorldSize.y / nodeDiameter);
+        grid = GetComponent<MapGrid>();
         camera = Camera.main;
     }
 
@@ -80,20 +59,6 @@ public class Bresenham : MonoBehaviour
             }
         }
 
-        // if ((Random.Range(0, freeSightChance) == 0) && FreeSightChecker(enemy_position, player_position)){
-        //     // Debug.Log("START whole");
-        //     // Debug.Log("enemy: " + enemy_position);
-        //     // Debug.Log("player: " + player_position);
-            
-            
-        //     // Vector2 vecky = new Vector2(1,1);
-        //     // Node node = instance.aStar.grid.NodeFromMapPoint(enemy_position);
-        //     // Debug.Log(node);
-        //     // Debug.Break();
-            
-        //     return true;
-        // }
-
         return false;
     }
 
@@ -109,7 +74,7 @@ public class Bresenham : MonoBehaviour
         int y = y0;
         for (int x = x0; x <= x1; x++){
             // This is the same as the plot(x,y) step in the Bresenham pseudocode
-            Node node = instance.aStar.grid.NodeFromMapPoint(camera.ScreenToWorldPoint(new Vector3(x,y,z_value)));
+            Node node = grid.NodeFromMapPoint(camera.ScreenToWorldPoint(new Vector3(x,y,z_value)));
             if (node is not null && !node.walkable){
                 // the node is not walkable
                 // Debug.Log(node);
@@ -142,7 +107,7 @@ public class Bresenham : MonoBehaviour
         int x = x0;
         for (int y = y0; y <= y1; y++){
             // This is the same as the plot(x,y) step in the Bresenham pseudocode
-            Node node = instance.aStar.grid.NodeFromMapPoint(camera.ScreenToWorldPoint(new Vector3(x,y,z_value)));
+            Node node = grid.NodeFromMapPoint(camera.ScreenToWorldPoint(new Vector3(x,y,z_value)));
             if (node is not null && !node.walkable){
                 // the node is not walkable
                 // Debug.Log(node);
@@ -181,7 +146,7 @@ public class Bresenham : MonoBehaviour
         for (int x = x0; x < x1; x++) 
         {
             Vector2 vecky = (Vector2) camera.ScreenToWorldPoint(new Vector3(x,y,z));
-            Node node = instance.aStar.grid.NodeFromMapPoint(vecky);
+            Node node = grid.NodeFromMapPoint(vecky);
             // Debug.Log(node); Debug.Break();
 
             if (node is not null && !node.walkable){
