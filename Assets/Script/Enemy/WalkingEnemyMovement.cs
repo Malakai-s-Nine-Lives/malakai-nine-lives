@@ -43,7 +43,7 @@ public class WalkingEnemyMovement : MonoBehaviour
     {
         activated |= Bresenham.determineActivation(freeSightChance, sightRadius, transform.position, player.position);
         if (activated) {
-            // Rotate by caluclated angle to face player
+            // Rotate by calculated angle to face player
             Vector3 direction = player.position - transform.position;
             direction.Normalize();
             movement = direction;

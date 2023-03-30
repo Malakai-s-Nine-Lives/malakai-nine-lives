@@ -52,7 +52,6 @@ public class Bresenham : MonoBehaviour
     }
 
     public static bool determineActivation(int freeSightChance, int sightRadius, Vector3 enemy_position, Vector3 player_position){
-
         
         int x0 = (int)camera.WorldToScreenPoint(enemy_position).x;
         int y0 = (int)camera.WorldToScreenPoint(enemy_position).y;
@@ -114,7 +113,7 @@ public class Bresenham : MonoBehaviour
             if (node is not null && !node.walkable){
                 // the node is not walkable
                 // Debug.Log(node);
-                Debug.Log("Malakai is Gone!");
+                // Debug.Log("Malakai is Gone!");
                 return false;
             }
 
@@ -127,7 +126,7 @@ public class Bresenham : MonoBehaviour
         }
         // if there were no ground collisions
         // there is a line of sight to Malakai
-        Debug.Log("I can see Malakai!!!");
+        // Debug.Log("I can see Malakai!!!");
         return true;
     }
 
@@ -147,7 +146,7 @@ public class Bresenham : MonoBehaviour
             if (node is not null && !node.walkable){
                 // the node is not walkable
                 // Debug.Log(node);
-                Debug.Log("Malakai is Gone!");
+                // Debug.Log("Malakai is Gone!");
                 return false;
             }
 
@@ -160,7 +159,7 @@ public class Bresenham : MonoBehaviour
         }
         // if there were no ground collisions
         // there is a line of sight to Malakai
-        Debug.Log("I can see Malakai!!!");
+        // Debug.Log("I can see Malakai!!!");
         return true;
     }
 
@@ -188,7 +187,7 @@ public class Bresenham : MonoBehaviour
             if (node is not null && !node.walkable){
                 // the node is not walkable
                 Debug.Log(node);
-                Debug.Log("Malakai is Gone!!!");
+                // Debug.Log("Malakai is Gone!!!");
                 // Debug.DrawRay(enemy_position, player_position, Color.green);
                 return false;
             }
@@ -203,7 +202,7 @@ public class Bresenham : MonoBehaviour
         
         // if there were no ground collisions
         // there is a line of sight to Malakai
-        Debug.Log("I can see Malakai!!!");
+        // Debug.Log("I can see Malakai!!!");
         return true;
     }
 }
