@@ -61,8 +61,13 @@ public class EnemyHealth : MonoBehaviour
 
                 // Deactivate the enemy
                 GetComponent<Collider2D>().enabled = false;
-                GetComponent<WalkingEnemyMovement>().enabled = false;
-
+                if (GetComponent("WalkingEnemyMovement"))
+                {
+                    GetComponent<WalkingEnemyMovement>().enabled = false;
+                } else
+                {
+                    GetComponent<FlyingEnemyMovement>().enabled = false;
+                }
                 // Make sure it stays in the same position it died in
                 GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             }

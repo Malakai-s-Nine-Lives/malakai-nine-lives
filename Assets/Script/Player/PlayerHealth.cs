@@ -4,7 +4,7 @@ public class PlayerHealth : MonoBehaviour
 {
     // For setting health
     public HealthBar healthBar;
-    public int maxHealth = 100;
+    public int maxHealth = 100; 
     private int currentHealth;
 
     // Additional Unity components
@@ -14,8 +14,11 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         // Initialize health
+        Debug.Log("mode is" + PlayerPrefs.GetString("mode"));
+        Debug.Log("current health is: " + PlayerPrefs.GetInt("health") + "out of " + maxHealth);
         healthBar.SetMaxHealth(maxHealth);
-        currentHealth = maxHealth;
+        currentHealth = PlayerPrefs.GetString("mode") == "hard" ? PlayerPrefs.GetInt("health") : maxHealth;
+        healthBar.SetHealth(currentHealth);
 
         // Get animator component
         anim = GetComponent<Animator>();
@@ -47,5 +50,11 @@ public class PlayerHealth : MonoBehaviour
                 GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             }
         }
+    }
+
+    // For hard mode, saves the current health of the player
+    public void SaveHealth()
+    {
+        PlayerPrefs.SetInt("health", currentHealth);
     }
 }
