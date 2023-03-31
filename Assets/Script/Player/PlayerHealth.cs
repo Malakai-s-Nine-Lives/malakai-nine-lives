@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -48,6 +49,7 @@ public class PlayerHealth : MonoBehaviour
                 GetComponent<PlayerMovement>().enabled = false;
                 GetComponent<PlayerAttack>().enabled = false;
                 GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+                SceneManager.LoadScene("DeathScene");
             }
         }
     }
