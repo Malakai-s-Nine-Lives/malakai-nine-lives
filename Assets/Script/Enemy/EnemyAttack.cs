@@ -39,8 +39,10 @@ public class EnemyAttack : MonoBehaviour
     {
         // Detect player in the range of the attack
         Collider2D hitPlayer = Physics2D.OverlapCircle(attackPoint.position, attackRange, playerLayer);
+        // we can change the dodge buttons later
+        bool dodgeButtonPressed = Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow);
 
-        if (hitPlayer)
+        if (hitPlayer && !dodgeButtonPressed)
         {
             // Play attack animation
             anim.SetTrigger("attack");

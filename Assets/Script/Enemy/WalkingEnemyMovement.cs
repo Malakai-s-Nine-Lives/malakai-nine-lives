@@ -8,13 +8,22 @@ public class WalkingEnemyMovement : MonoBehaviour
     public Transform player;
     public float moveSpeed = 0.5f;
     private Rigidbody2D enemy_body;
-    private Vector2 movement;
+    protected Vector2 movement;
 
     // For animations
-    private Animator anim;
+    protected Animator anim;
 
     // Booleans for the flipping direction facing
-    private bool facingLeft;
+    protected bool facingLeft;
+
+    // For Running Bresenham Algorithm
+    // This will turn to true once the enemy spots Malakai
+    protected bool activated = false;
+    // The higher the value, the smaller the chance of running the free sight
+    public int freeSightChance = 100;
+    // how far away the enemy can see
+    public int sightRadius = 5;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -32,29 +41,35 @@ public class WalkingEnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Rotate by caluclated angle to face player
-        Vector3 direction = player.position - transform.position;
-        direction.Normalize();
-        movement = direction;
-        Flip(movement);  // Flip the image to match the direction to face
+        activated |= Bresenham.determineActivation(freeSightChance, sightRadius, transform.position, player.position);
+        if (activated) {
+            // Rotate by calculated angle to face player
+            Vector3 direction = player.position - transform.position;
+            direction.Normalize();
+            movement = direction;
+            Flip(movement);  // Flip the image to match the direction to face
 
-        // update animation
-        anim.SetBool("walk", Mathf.Abs(direction[0]) > 0.1);
-    } 
+            // update animation
+            anim.SetBool("walk", Mathf.Abs(direction[0]) > 0.1);
+        }
+    }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
-        MoveEnemy(movement);  // Have enemy follow player
+        activated |=  Bresenham.determineActivation(freeSightChance, sightRadius, transform.position, player.position);
+        if (activated) {
+            MoveEnemy(movement);  // Have enemy follow player
+        }
     }
 
     // Move enemy position based on where the player is
-    private void MoveEnemy(Vector2 direction)
+    protected void MoveEnemy(Vector2 direction)
     {
         enemy_body.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
     }
 
     // Flip the enemy character depending on which direction it is facing
-    private void Flip(Vector2 direction)
+    protected virtual void Flip(Vector2 direction)
     {
         if (facingLeft && direction[0] > 0f || !facingLeft && direction[0] <= 0f)
         {
