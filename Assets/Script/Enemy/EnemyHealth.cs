@@ -13,12 +13,16 @@ public class EnemyHealth : MonoBehaviour
 
     // Additional Unity components
     private Animator anim;
+    private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
         // Grab reference to animator
         anim = GetComponent<Animator>();
+
+        // Grab reference to rigidbody
+        rb = GetComponent<Rigidbody2D>();
 
         // Intialize health
         currentHealth = maxHealth;
@@ -54,20 +58,26 @@ public class EnemyHealth : MonoBehaviour
 
             // Only deactivate the gameobject once it has hit the ground
             Collider2D boxCollider = GetComponent<Collider2D>();
+
+            // Give player the game points
+            player.TakePoints(pointValue);
+
+            if (GetComponent<WalkingEnemyMovement>())
+            {
+                GetComponent<WalkingEnemyMovement>().enabled = false;
+            }
+            else
+            {
+                // Set gravity so crow can fall to the ground
+                rb.gravityScale = 2.0f;
+                GetComponent<FlyingEnemyMovement>().enabled = false;
+            }
+
             if (Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0.1f, groundLayer).collider != null)
             {
-                // Give player the game points
-                player.TakePoints(pointValue);
-
                 // Deactivate the enemy
                 GetComponent<Collider2D>().enabled = false;
-                if (GetComponent("WalkingEnemyMovement"))
-                {
-                    GetComponent<WalkingEnemyMovement>().enabled = false;
-                } else
-                {
-                    GetComponent<FlyingEnemyMovement>().enabled = false;
-                }
+
                 // Make sure it stays in the same position it died in
                 GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             }

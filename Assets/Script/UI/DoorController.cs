@@ -4,10 +4,24 @@ using UnityEngine;
 public class DoorController : MonoBehaviour
 {
     public string nextScene;
+    private bool doorOpened = false;
+    Animator anim;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
+    public void OpenDoor()
+    {
+        anim.Play("open");
+        doorOpened = true;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Malakai")
+        Debug.Log("Door opened? " + doorOpened);
+        if (collision.gameObject.name == "Malakai" && doorOpened)
         {
             // save current health of malakai to the game global if in hard mode
             if (PlayerPrefs.GetString("mode") == "hard")
