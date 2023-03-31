@@ -6,10 +6,31 @@ public class PatrollingEnemy : WalkingEnemyMovement
 {
     
     private bool nextStepIsOnTheGround = false;
+    float memory = 5f; float startTime;
     
     protected override void FixedUpdate()
     {
-        activated |=  Bresenham.determineActivation(freeSightChance, sightRadius, transform.position, player.position);
+
+        bool oldActivation = activated;
+        // Bresenham has to be ran deterministically to implement forgetfulness properly
+        bool bresenhamResult = Bresenham.determineActivation(0, sightRadius, transform.position, player.position);
+        activated |= bresenhamResult;
+        
+        if (activated && bresenhamResult){
+            // Enemy can still see Malakai. Reset the timer.
+            Debug.Log("I can see Malakai");
+            startTime = Time.time;
+        } else if (activated && !bresenhamResult && (Time.time - startTime > memory) ) {
+            // enemy used to be activated 
+            // enemy no longer sees Malakai
+            // if its been memory-seconds since enemy last saw malakai
+            Debug.Log("I cannot see Malakai anymore");
+            Debug.Log(Time.time - startTime);
+            // the enemy will forget Malakai
+            activated = false;
+        }
+
+
         if (activated && nextStepIsOnTheGround) {
             MoveEnemy(movement);  // Have enemy follow player
             Debug.Log("Activated and next step IS on the ground");
@@ -18,12 +39,24 @@ public class PatrollingEnemy : WalkingEnemyMovement
             Debug.Log("Activated but next step is NOT on the ground");
             anim.SetBool("walk", false);
         } else {
-            if (facingLeft){
-                // move left
-                MoveEnemy(Vector2.left);
+            if (oldActivation && !activated){
+                // enemy JUST forgot about Malakai
+                // enemy should go the other way
+                if (facingLeft){
+                    Flip(Vector2.right);
+                    MoveEnemy(Vector2.right);
+                } else {
+                    Flip(Vector2.left);
+                    MoveEnemy(Vector2.left);
+                }
             } else {
-                // move right
-                MoveEnemy(Vector2.right);
+                if (facingLeft){
+                    // move left
+                    MoveEnemy(Vector2.left);
+                } else {
+                    // move right
+                    MoveEnemy(Vector2.right);
+                }
             }
             anim.SetBool("walk", true);
         }
