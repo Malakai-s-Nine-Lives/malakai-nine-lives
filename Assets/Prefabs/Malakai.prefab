@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8116733489429133085}
   - component: {fileID: 4017578251031630262}
   - component: {fileID: 7124806362750407426}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Malakai
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,8 +223,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   progressBar: {fileID: 0}
-  maxPoints: 100
   door: {fileID: 0}
+  progRatio: 0.8
 --- !u!1 &7043935961497526370
 GameObject:
   m_ObjectHideFlags: 0
