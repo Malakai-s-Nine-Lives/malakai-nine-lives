@@ -18,11 +18,11 @@ GameObject:
   - component: {fileID: 1565254824677297023}
   m_Layer: 7
   m_Name: WalkingEnemy1
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1314906016092592619
 Transform:
   m_ObjectHideFlags: 0

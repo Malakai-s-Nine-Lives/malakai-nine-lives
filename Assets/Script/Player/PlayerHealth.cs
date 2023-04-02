@@ -32,7 +32,7 @@ public class PlayerHealth : MonoBehaviour
     private void Update()
     {
         // set blocking variable if player is currently blocking
-        blocking = Input.GetKey(KeyCode.DownArrow);
+        blocking = Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S);
     }
 
     // Accessed by enemy attack scripts to give damage to the player
