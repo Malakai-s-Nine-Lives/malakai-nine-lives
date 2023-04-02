@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8116733489429133085}
   - component: {fileID: 4017578251031630262}
   - component: {fileID: 7124806362750407426}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Malakai
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,9 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 771d3d2e061f1e14c8309db76289cc00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressBar: {fileID: 2257978078779232497, guid: 5f671a2384173b042887f9731138d1d7, type: 3}
-  maxPoints: 100
-  currentPoints: 0
   speed: 1
   jumpingPower: 3
   jumpCooldown: 1
@@ -194,9 +191,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDamage: 25
   attackRange: 0.1
+  attackCooldown: 0.5
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
 --- !u!114 &4017578251031630262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,6 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
   maxHealth: 100
+  blockTime: 1
 --- !u!114 &7124806362750407426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,8 +223,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   progressBar: {fileID: 0}
-  maxPoints: 100
-  currentPoints: 0
+  door: {fileID: 0}
+  progRatio: 0.8
 --- !u!1 &7043935961497526370
 GameObject:
   m_ObjectHideFlags: 0

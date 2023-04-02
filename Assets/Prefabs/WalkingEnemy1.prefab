@@ -16,9 +16,9 @@ GameObject:
   - component: {fileID: 4257545725464112816}
   - component: {fileID: 5985563968287744811}
   - component: {fileID: 1565254824677297023}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WalkingEnemy1
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,9 +170,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 583e9d9bcc996ab408f57c0e86897960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1366319692224036798, guid: 84831f2c64ae32044999a81d7ec2efe4, type: 3}
-  damage: 25
+  player: {fileID: 0}
   moveSpeed: 0.5
+  freeSightChance: 100
+  sightRadius: 5
 --- !u!114 &5985563968287744811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,9 +187,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  pointValue: 10
+  pointValue: 100
   maxCorpseTime: 5
   player: {fileID: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!114 &1565254824677297023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,12 +205,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d217f31a4a325b44ea92c65faeb6d5ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 1
+  attackCooldown: 3
   attackDamage: 25
   attackRange: 0.1
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
 --- !u!1 &8336036449195022878
 GameObject:
   m_ObjectHideFlags: 0

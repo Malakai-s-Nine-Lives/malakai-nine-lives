@@ -47,9 +47,9 @@ GameObject:
   - component: {fileID: 7529314698321975969}
   - component: {fileID: 6336582835123196484}
   - component: {fileID: 7412663455509973943}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FlyingEnemy1
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -201,8 +201,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae92703d30735244ace36049e90b575, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1366319692224036798, guid: 84831f2c64ae32044999a81d7ec2efe4, type: 3}
-  damage: 50
+  player: {fileID: 0}
+  damage: 25
   moveSpeed: 0.5
   maxHealth: 100
 --- !u!114 &6336582835123196484
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 1
-  attackDamage: 25
+  attackDamage: 5
   attackRange: 0.1
   playerLayer:
     serializedVersion: 2
@@ -241,4 +241,4 @@ MonoBehaviour:
   player: {fileID: 0}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8

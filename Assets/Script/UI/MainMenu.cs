@@ -6,12 +6,12 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private int _easy_mode = 1;  // Store the mode we are playing
-
-    public int easy_mode
+    public void Start()
     {
-        get { return _easy_mode; }
-        set { _easy_mode = value; }
+        // set the default play mode to easy
+        PlayerPrefs.SetString("mode", "easy");
+        PlayerPrefs.SetInt("health", 100); // start off with 100 health
+        PlayerPrefs.Save();
     }
 
     public void PlayGame()  // Load first level if play

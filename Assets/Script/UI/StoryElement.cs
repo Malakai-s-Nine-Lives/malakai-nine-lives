@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class StoryElement : MonoBehaviour
 {
-    public Dialogue dialogue1;
-    public Dialogue dialogue2;
-
+    public Dialogue dialogue;
     public void TriggerDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue1, dialogue2);
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
     }
 }

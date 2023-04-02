@@ -23,13 +23,17 @@ public class SettingsMenu : MonoBehaviour
 
     public void HardMode()  // If we select hard mode
     {
-        script.easy_mode = 0;
         mode_text.text = "Hard";
+        PlayerPrefs.SetString("mode", "hard");
+        PlayerPrefs.SetInt("health", 100); // start off with 100 health
+        PlayerPrefs.Save();
     }
 
     public void EasyMode()  // If we select Easy mode
     {
-        script.easy_mode = 1;
         mode_text.text = "Easy";
+        PlayerPrefs.SetString("mode", "easy");
+        PlayerPrefs.SetInt("health", 100); // start off with 100 health
+        PlayerPrefs.Save();
     }
 }
