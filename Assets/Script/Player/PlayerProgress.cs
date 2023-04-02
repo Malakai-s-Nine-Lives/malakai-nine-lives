@@ -5,7 +5,7 @@ public class PlayerProgress : MonoBehaviour
 {
     // For setting progress and next scene
     public ProgressBar progressBar;
-    public int maxPoints = 100;
+    private int maxPoints = 100;
     public DoorController door;
     private int currentPoints = 0;
     public float progRatio = 0.8f; // ratio of total points need to unlock door
