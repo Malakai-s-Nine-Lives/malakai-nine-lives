@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
         // Set animator params
         anim.SetBool("walk", horizontal != 0);
         anim.SetBool("grounded", IsGrounded());
+        anim.SetBool("fall", rb.velocity.y < 0);
 
         // Jump logic
         if (jumpTime > jumpCooldown && (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && IsGrounded())

@@ -24,18 +24,18 @@ public class FlyingEnemyMovement : MonoBehaviour
     private bool facingdown;
     private SpriteRenderer sprite_render;
 
-    // For setting health
-    public int maxHealth = 100;
-    private int currentHealth;
+    // Additional Unity Components
+    private Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
+        // Get enemy body
         enemy_body = this.GetComponent<Rigidbody2D>();
         sprite_render = this.GetComponent<SpriteRenderer>();
 
-        // Set health as max
-        currentHealth = maxHealth;
+        // Get animator
+        anim = GetComponent<Animator>();
 
         // Get position of player
         Vector3 direction = player.position - transform.position;
@@ -77,6 +77,9 @@ public class FlyingEnemyMovement : MonoBehaviour
         movement = direction;
         rotation_angle = angle;
         Flip(movement);  // Flip the image to match the direction rotated
+
+        // Set animation variables
+        anim.SetBool("fall", enemy_body.velocity.y < 0);
 
     }
 
@@ -245,12 +248,6 @@ public class FlyingEnemyMovement : MonoBehaviour
         {
             return false;
         }
-    }
-
-    // Accessed by enemy attack scripts to give damage to player
-    public void TakeDamage()
-    {
-        currentHealth -= damage;
     }
 
 }
