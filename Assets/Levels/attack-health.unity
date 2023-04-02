@@ -1010,21 +1010,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1366319692224036784, guid: 84831f2c64ae32044999a81d7ec2efe4, type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 1598628442}
-    - target: {fileID: 1366319692224036784, guid: 84831f2c64ae32044999a81d7ec2efe4, type: 3}
-      propertyPath: progressBar
-      value: 
-      objectReference: {fileID: 98872613}
     - target: {fileID: 1366319692224036795, guid: 84831f2c64ae32044999a81d7ec2efe4, type: 3}
       propertyPath: m_Name
       value: Malakai
-      objectReference: {fileID: 0}
-    - target: {fileID: 1366319692224036795, guid: 84831f2c64ae32044999a81d7ec2efe4, type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1366319692224036798, guid: 84831f2c64ae32044999a81d7ec2efe4, type: 3}
       propertyPath: m_RootOrder
@@ -1079,17 +1067,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1439564819}
     - target: {fileID: 7124806362750407426, guid: 84831f2c64ae32044999a81d7ec2efe4, type: 3}
-      propertyPath: nextScene
-      value: base
-      objectReference: {fileID: 0}
-    - target: {fileID: 7124806362750407426, guid: 84831f2c64ae32044999a81d7ec2efe4, type: 3}
       propertyPath: progressBar
       value: 
       objectReference: {fileID: 98872613}
-    - target: {fileID: 8116733489429133085, guid: 84831f2c64ae32044999a81d7ec2efe4, type: 3}
-      propertyPath: enemyLayers.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84831f2c64ae32044999a81d7ec2efe4, type: 3}
 --- !u!1 &1203113927

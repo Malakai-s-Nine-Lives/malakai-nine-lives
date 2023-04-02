@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
     private int currentHealth;
     public float blockTime = 1f;
     private float damageTimer = 0.00f;
-    private bool blocking = false;
+    public bool blocking = false;
 
     // Additional Unity components
     private Animator anim;
@@ -33,6 +33,7 @@ public class PlayerHealth : MonoBehaviour
     {
         // set blocking variable if player is currently blocking
         blocking = Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S);
+        if (blocking) anim.Play("Fright");
     }
 
     // Accessed by enemy attack scripts to give damage to the player
@@ -50,7 +51,6 @@ public class PlayerHealth : MonoBehaviour
             {
                 Debug.Log("down arrow pressed, block");
                 // block attack
-                anim.Play("Fright");
                 damageTimer = 0;
                 return;
             }

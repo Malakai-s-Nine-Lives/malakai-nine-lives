@@ -8,6 +8,7 @@ public class PlayerAttack : MonoBehaviour
     public float attackCooldown = 0.5f;
     private Transform attackPoint;
     private float attackTimer = 0f;
+    private PlayerHealth health;
 
     // Additional Unity Components
     private Animator anim;
@@ -19,13 +20,14 @@ public class PlayerAttack : MonoBehaviour
         // Grab references for rigidbody and animator from object
         anim = GetComponent<Animator>();
         attackPoint = transform.Find("AttackPoint");
+        health = GetComponent<PlayerHealth>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Attack on mouse click or space bar
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) && attackTimer > attackCooldown)
+        // Attack on space bar
+        if (Input.GetKeyDown(KeyCode.Space) && attackTimer > attackCooldown)
         {
             Attack();
             attackTimer = 0;
@@ -36,6 +38,9 @@ public class PlayerAttack : MonoBehaviour
 
     void Attack()
     {
+        // If the player is blocking, they cannot attack at the same time
+        if (health.blocking) return;
+
         // Play attack animation
         anim.SetTrigger("attack");
 
