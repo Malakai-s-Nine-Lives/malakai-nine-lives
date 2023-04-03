@@ -73,12 +73,12 @@ public class PlayerHealth : MonoBehaviour
             // Make sure body has hit the floor
             if (GetComponent<PlayerMovement>().IsGrounded())
             {
-                // Deactivate the player (and eventually move to death cinematic once we have that)
+                // Deactivate the player
                 GetComponent<Collider2D>().enabled = false;
                 GetComponent<PlayerMovement>().enabled = false;
                 GetComponent<PlayerAttack>().enabled = false;
                 GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-                DeathMenuUI.SetActive(true);  // Open Death Menu
+                Invoke("toDeathMenu", 2);  // This will take us to the death menu in 2 seconds
             }
         }
     }
@@ -87,5 +87,10 @@ public class PlayerHealth : MonoBehaviour
     public void SaveHealth()
     {
         PlayerPrefs.SetInt("health", currentHealth);
+    }
+
+    void toDeathMenu()
+    {
+        DeathMenuUI.SetActive(true);  // Open Death Menu
     }
 }
