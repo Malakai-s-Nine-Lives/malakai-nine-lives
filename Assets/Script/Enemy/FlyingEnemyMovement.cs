@@ -23,7 +23,7 @@ public class FlyingEnemyMovement : MonoBehaviour
     // Booleans for the rotation direction of the flying enemy
     private bool facingLeft;
     private bool facingdown;
-    private SpriteRenderer sprite_render;
+    public SpriteRenderer sprite_render;  // The enemy's sprite render
 
     private bool waitDone = false;
 
@@ -71,8 +71,10 @@ public class FlyingEnemyMovement : MonoBehaviour
 
     IEnumerator wait()
     {
+        sprite_render.enabled = false;
         yield return new WaitForSeconds(waitSeconds);  // Wait before moving
         waitDone = true;  // Update bool so update and fixed update can run
+        sprite_render.enabled = true;
         // Initially request A* to attack the player
         PathRequest.RequestPath(transform.position, player.position, OnPathFound);
     }
@@ -126,6 +128,7 @@ public class FlyingEnemyMovement : MonoBehaviour
     {
         if (path.Length > 0)  // Only move if we have somewhere to move
         {
+            Debug.Log("path length" + path.Length);
             Vector2 currentWaypoint = path[0];  // Get the waypoint to move to
             while (true)
             {

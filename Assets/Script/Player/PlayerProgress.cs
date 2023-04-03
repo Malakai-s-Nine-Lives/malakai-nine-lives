@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerProgress : MonoBehaviour
@@ -9,6 +10,7 @@ public class PlayerProgress : MonoBehaviour
     public DoorController door;
     private int currentPoints = 0;
     public float progRatio = 0.8f; // ratio of total points need to unlock door
+    public GameObject opendoorText;  // the text telling Malakai the door is open
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +52,14 @@ public class PlayerProgress : MonoBehaviour
             // activate the door script
             Debug.Log("Opening door: ");
             door.OpenDoor();
+            StartCoroutine(displaymessage());
         }
+    }
+
+    IEnumerator displaymessage()
+    {
+        opendoorText.SetActive(true);
+        yield return new WaitForSeconds(5); // Display text for 5 seconds
+        opendoorText.SetActive(false);
     }
 }
