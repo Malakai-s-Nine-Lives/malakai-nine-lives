@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject PauseMenuUI;
     public GameObject WarningMenuUI;
     public GameObject QuitGameUI;
+    public GameObject BarsUI;
 
     // Update is called once per frame
     void Update()
@@ -29,6 +30,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         PauseMenuUI.SetActive(false);  // Set Pause menu UI to invisible
+        BarsUI.SetActive(true);  // Show the health and progress bars
         Time.timeScale = 1f; // Continue game running
         GamePaused = false;  // Bool for keeping track of status
     }
@@ -36,6 +38,7 @@ public class PauseMenu : MonoBehaviour
     public void Pause()
     {
         PauseMenuUI.SetActive(true);  // Set Pause menu UI to visible
+        BarsUI.SetActive(false);  // Hide the health and progress bars
         Time.timeScale = 0f; // Freeze the game
         GamePaused = true;  // Bool for keeping track of status
     }
