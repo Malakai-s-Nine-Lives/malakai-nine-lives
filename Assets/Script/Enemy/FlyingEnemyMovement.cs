@@ -7,6 +7,7 @@ public class FlyingEnemyMovement : MonoBehaviour
     public Transform player;  // To react to player movement
     public int damage = 50;  // Damage value for enemy
     public float moveSpeed = 0.5f;  // Speed of enemy
+    public int waitSeconds = 0;  // Time to wait before searching
 
     // Get the movement for the enemy
     private Rigidbody2D enemy_body;
@@ -24,12 +25,16 @@ public class FlyingEnemyMovement : MonoBehaviour
     private bool facingdown;
     private SpriteRenderer sprite_render;
 
+    private bool waitDone = false;
+
     // Additional Unity Components
     private Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
+        // Wait for specified seconds before deploying
+        StartCoroutine(wait());
         // Get enemy body
         enemy_body = this.GetComponent<Rigidbody2D>();
         sprite_render = this.GetComponent<SpriteRenderer>();
@@ -62,14 +67,23 @@ public class FlyingEnemyMovement : MonoBehaviour
 
         Flip(direction); // Get correct position initially
 
-        // Initially request A* to attack teh player
-        PathRequest.RequestPath(transform.position, player.position, OnPathFound);
+    }
 
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(waitSeconds);  // Wait before moving
+        waitDone = true;  // Update bool so update and fixed update can run
+        // Initially request A* to attack the player
+        PathRequest.RequestPath(transform.position, player.position, OnPathFound);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!waitDone)
+        {
+            return;
+        }
         // Rotate by caluclated angle to face player
         Vector3 direction = player.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -85,6 +99,10 @@ public class FlyingEnemyMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!waitDone)
+        {
+            return;
+        }
         if (playerPos != (Vector2) player.position)  // If player has moved
         {
             // Get an optimal path of attack
@@ -115,7 +133,7 @@ public class FlyingEnemyMovement : MonoBehaviour
                 if ((Vector2)transform.position == currentWaypoint)
                 {
                     targetIndex++;  // Where we plan to go
-                    if (targetIndex >= path.Length)
+                    if (targetIndex >= path.Length || path.Length == 1)
                     {
                         yield break;
                     }
@@ -123,7 +141,6 @@ public class FlyingEnemyMovement : MonoBehaviour
                 }
 
                 enemy_body.rotation = rotation_angle;  // Rotate enemy based on direction of travel
-
                 // Move
                 transform.position = (Vector2) Vector2.MoveTowards((Vector2) transform.position, currentWaypoint, moveSpeed * Time.deltaTime);
                 yield return null;

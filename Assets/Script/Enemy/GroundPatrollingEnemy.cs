@@ -6,7 +6,7 @@ public class GroundPatrollingEnemy : PlatformPatrollingEnemy
 {
     protected override void OnTriggerEnter2D(Collider2D collision)
     { 
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy")||collision.GetComponent<DoorController>()|| collision.GetComponent<StationaryHazard>())
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy")|| collision.gameObject.layer == LayerMask.NameToLayer("Hazards") || collision.GetComponent<DoorController>()|| collision.GetComponent<StationaryHazard>())
         {
             Debug.Log("Ignoring", collision.gameObject);
             // ignore, it's just a door/stationary object
