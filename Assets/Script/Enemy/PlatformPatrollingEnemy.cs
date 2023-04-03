@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PatrollingEnemy : WalkingEnemyMovement
+public class PlatformPatrollingEnemy : WalkingEnemyMovement
 {
     
-    private bool nextStepIsOnTheGround = false;
+    protected bool nextStepIsOnTheGround = false;
     float memory = 5f; float startTime;
     
     protected override void FixedUpdate()
@@ -62,11 +62,11 @@ public class PatrollingEnemy : WalkingEnemyMovement
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    protected virtual void OnTriggerExit2D(Collider2D collision)
     { 
-        if (collision.GetComponent<DoorController>())
+        if (collision.GetComponent<DoorController>()|| collision.GetComponent<StationaryHazard>())
         {
-            // ignore, it's just a door
+            // ignore, it's just a door/stationary object
             return;
         }
         // when a collider exits another collider, this function runs
@@ -84,10 +84,10 @@ public class PatrollingEnemy : WalkingEnemyMovement
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision){
-        if (collision.GetComponent<DoorController>())
+    protected virtual void OnTriggerEnter2D(Collider2D collision){
+        if (collision.GetComponent<DoorController>()|| collision.GetComponent<StationaryHazard>())
         {
-            // ignore, it's just a door
+            // ignore, it's just a door/stationary object
             return;
         }
         nextStepIsOnTheGround = true;
