@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
     public float blockTime = 1f;
     private float damageTimer = 0.00f;
     public bool blocking = false;
+    public GameObject DeathMenuUI;
 
     // Additional Unity components
     private Animator anim;
@@ -77,7 +78,7 @@ public class PlayerHealth : MonoBehaviour
                 GetComponent<PlayerMovement>().enabled = false;
                 GetComponent<PlayerAttack>().enabled = false;
                 GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-                SceneManager.LoadScene("DeathScene");
+                DeathMenuUI.SetActive(true);  // Open Death Menu
             }
         }
     }
