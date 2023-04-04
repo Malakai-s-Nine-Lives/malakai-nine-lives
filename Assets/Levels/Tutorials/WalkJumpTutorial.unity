@@ -1941,6 +1941,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Catnip1
       objectReference: {fileID: 0}
+    - target: {fileID: 2308096236813198764, guid: e224b17de7134ea41b901023a8eb28b6, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e224b17de7134ea41b901023a8eb28b6, type: 3}
 --- !u!1 &2112617647
