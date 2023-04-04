@@ -6,7 +6,21 @@ public class PlatformPatrollingEnemy : WalkingEnemyMovement
 {
     
     protected bool nextStepIsOnTheGround = false;
-    float memory = 5f; float startTime;
+    float memory2 = 5f; float startTime2;
+
+    // Start is called before the first frame update
+    protected virtual void Start()
+    {
+        nextStepIsOnTheGround = false;
+        base.Start();
+    }
+
+    protected override void Update()
+    {
+        Vector3 direction = player.position - transform.position;
+        direction.Normalize();
+        movement = direction;
+    }
     
     protected override void FixedUpdate()
     {
@@ -19,26 +33,35 @@ public class PlatformPatrollingEnemy : WalkingEnemyMovement
         if (activated && bresenhamResult){
             // Enemy can still see Malakai. Reset the timer.
             Debug.Log("I can see Malakai");
-            startTime = Time.time;
-        } else if (activated && !bresenhamResult && (Time.time - startTime > memory) ) {
+            startTime2 = Time.time;
+        } else if (activated && !bresenhamResult && (Time.time - startTime2 > memory2) ) {
             // enemy used to be activated 
             // enemy no longer sees Malakai
-            // if its been memory-seconds since enemy last saw malakai
+            // if its been memory2-seconds since enemy last saw malakai
             Debug.Log("I cannot see Malakai anymore");
-            Debug.Log(Time.time - startTime);
+            Debug.Log(Time.time - startTime2);
             // the enemy will forget Malakai
             activated = false;
         }
-
-
+        
         if (activated && nextStepIsOnTheGround) {
+            Vector3 direction = player.position - transform.position;
+            direction.Normalize();
+            movement = direction;
+            Flip(movement);
             MoveEnemy(movement);  // Have enemy follow player
             Debug.Log("Activated and next step IS on the ground");
             anim.SetBool("walk", true);
         } else if (activated) {
+            Vector3 direction = player.position - transform.position;
+            direction.Normalize();
+            movement = direction;
+            Flip(movement);
+
             Debug.Log("Activated but next step is NOT on the ground");
             anim.SetBool("walk", false);
         } else {
+            // patrol mode
             if (oldActivation && !activated){
                 // enemy JUST forgot about Malakai
                 // enemy should go the other way
@@ -73,6 +96,7 @@ public class PlatformPatrollingEnemy : WalkingEnemyMovement
         nextStepIsOnTheGround = false;
         Debug.Log("The collider exited");
         if (activated){
+            // in hunt mode
             Debug.Log(nextStepIsOnTheGround);
         } else {
             // in patrol mode
