@@ -22,13 +22,13 @@ public class GroundPatrollingEnemy : PatrollingEnemy
         base.FixedUpdate();
     }
 
-    protected void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         base.HitABoundary(collision);
         allowedToTakeNextStep = false;
     }
 
-    protected void OnTriggerExit2D(Collider2D collision)
+    void OnTriggerExit2D(Collider2D collision)
     {
         base.ExitTheBoundary(collision);
         allowedToTakeNextStep = true;
