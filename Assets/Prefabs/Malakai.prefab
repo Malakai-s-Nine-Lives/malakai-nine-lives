@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 771d3d2e061f1e14c8309db76289cc00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  jumpingPower: 3
+  speed: 3
+  jumpingPower: 5
   jumpCooldown: 1
   groundLayer:
     serializedVersion: 2
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDamage: 25
   attackRange: 0.1
-  attackCooldown: 0.5
+  attackCooldown: 0.25
   enemyLayers:
     serializedVersion: 2
     m_Bits: 128
@@ -210,6 +210,8 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   maxHealth: 100
   blockTime: 1
+  blocking: 0
+  DeathMenuUI: {fileID: 0}
 --- !u!114 &7124806362750407426
 MonoBehaviour:
   m_ObjectHideFlags: 0

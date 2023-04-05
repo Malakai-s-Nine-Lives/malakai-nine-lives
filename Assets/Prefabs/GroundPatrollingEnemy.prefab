@@ -35,6 +35,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6595252564396043760, guid: bd3079e6c40562b46a4c8d8a2d1d1bfd, type: 3}
+      propertyPath: attackDamage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6629458862312079204, guid: bd3079e6c40562b46a4c8d8a2d1d1bfd, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -103,3 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a54cd2f59d24153469a5c04bbf76b164, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  moveSpeed: 0.5
+  freeSightChance: 100
+  sightRadius: 5

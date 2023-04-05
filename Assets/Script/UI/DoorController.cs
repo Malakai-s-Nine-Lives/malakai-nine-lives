@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
-    public string nextScene;
     private bool doorOpened = false;
     Animator anim;
 
@@ -31,7 +30,7 @@ public class DoorController : MonoBehaviour
             }
             
             // load the next scene (cutscene before the next level)
-            SceneManager.LoadScene(nextScene);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
             
     }
