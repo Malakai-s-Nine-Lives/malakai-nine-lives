@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 8820762743666969628}
   - component: {fileID: 4277722995122112506}
   - component: {fileID: 7223561621993613938}
-  - component: {fileID: 4257545725464112816}
   - component: {fileID: 5985563968287744811}
   - component: {fileID: 1565254824677297023}
+  - component: {fileID: 4257545725464112816}
   m_Layer: 7
   m_Name: WalkingEnemy1
   m_TagString: enemy
@@ -158,22 +158,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &4257545725464112816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7417852735043141615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 583e9d9bcc996ab408f57c0e86897960, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  moveSpeed: 0.5
-  freeSightChance: 100
-  sightRadius: 5
 --- !u!114 &5985563968287744811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,6 +195,25 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &4257545725464112816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7417852735043141615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583e9d9bcc996ab408f57c0e86897960, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  moveSpeed: 0.5
+  freeSightChance: 100
+  sightRadius: 5
+  memory: 5
+  groundColliderLeft: {fileID: 0}
+  groundColliderRight: {fileID: 0}
 --- !u!1 &8336036449195022878
 GameObject:
   m_ObjectHideFlags: 0

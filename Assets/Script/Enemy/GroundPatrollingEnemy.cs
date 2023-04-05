@@ -2,38 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GroundPatrollingEnemy : PlatformPatrollingEnemy
+public class GroundPatrollingEnemy : PatrollingEnemy
 {
-    protected override void OnTriggerEnter2D(Collider2D collision)
-    { 
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy")|| collision.gameObject.layer == LayerMask.NameToLayer("Hazards") || collision.GetComponent<DoorController>()|| collision.GetComponent<StationaryHazard>())
-        {
-            Debug.Log("Ignoring", collision.gameObject);
-            // ignore, it's just a door/stationary object
-            return;
-        }
-        // when a collider exits another collider, this function runs
-        nextStepIsOnTheGround = true;
-        Debug.Log("The collider exited");
-        if (activated){
-            Debug.Log(nextStepIsOnTheGround);
-        } else {
-            // in patrol mode
-            if (facingLeft){
-                Flip(Vector2.right); // face right
-            } else {
-                Flip(Vector2.left); // face left
-            }
-        }
+    // Start is called before the first frame update
+    protected virtual void Start()
+    {
+        base.Start();
+        allowedToTakeNextStep = true;
     }
 
-    protected override void OnTriggerExit2D(Collider2D collision){
-        if (collision.GetComponent<DoorController>()|| collision.GetComponent<StationaryHazard>())
-        {
-            // ignore, it's just a door/stationary object
-            return;
-        }
-        nextStepIsOnTheGround = true;
-        Debug.Log("The collider entered");
+    // Update is called once per frame
+    protected override void Update()
+    {
+        base.Update();
+    }
+
+    protected override void FixedUpdate()
+    {
+        base.FixedUpdate();
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        base.HitABoundary(collision);
+    }
+
+     void OnTriggerExit2D(Collider2D collision)
+    {
+        base.ExitTheBoundary(collision);
     }
 }

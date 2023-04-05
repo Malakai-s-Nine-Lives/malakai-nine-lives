@@ -18,15 +18,17 @@ public class WalkingEnemyMovement : MonoBehaviour
 
     // For Running Bresenham Algorithm
     // This will turn to true once the enemy spots Malakai
-    protected bool activated = false;
+    protected bool activated;
     // The higher the value, the smaller the chance of running the free sight
-    public int freeSightChance = 100;
+    public int freeSightChance = 0;
     // how far away the enemy can see
-    public int sightRadius = 5;
-    
+    public int sightRadius = 100;
+    // for the enemy to forget Malakai
+    protected float memory = 5f;
+    protected float startTime;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         // Grab references for rigidbody and animator
         enemy_body = GetComponent<Rigidbody2D>();
@@ -36,29 +38,48 @@ public class WalkingEnemyMovement : MonoBehaviour
         enemy_body.freezeRotation = true;
         enemy_body.angularVelocity = 0f;
         enemy_body.constraints = RigidbodyConstraints2D.FreezePositionY;
+
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Enemy"), LayerMask.NameToLayer("Hazards"), true);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Enemy"), LayerMask.NameToLayer("Enemy"), true);
+        activated = false; // start enemy in idle mode
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
-        activated |= Bresenham.determineActivation(freeSightChance, sightRadius, transform.position, player.position);
+        
+    }
+
+
+    protected virtual void FixedUpdate()
+    {
+        bool usedToBeActivated = activated;
+        bool bresenhamResult = Bresenham.determineActivation(0, sightRadius, transform.position, player.position);
+        activated |= bresenhamResult;
+
+        if (activated && bresenhamResult){
+            // Enemy can still see Malakai. Reset the timer.
+            Debug.Log("I can see Malakai");
+            startTime = Time.time;
+        } else if (activated && !bresenhamResult && (Time.time - startTime > memory) ) {
+            // enemy used to be activated
+            // enemy no longer sees Malakai
+            // if its been memory-seconds since enemy last saw malakai
+            Debug.Log("I forgot I saw Malakai.");
+            // the enemy will forget Malakai
+            anim.SetBool("Idle", true); // figure out how to do this properly
+            activated = false;
+        }
+
         if (activated) {
             // Rotate by calculated angle to face player
             Vector3 direction = player.position - transform.position;
             direction.Normalize();
             movement = direction;
             Flip(movement);  // Flip the image to match the direction to face
-
             // update animation
             anim.SetBool("walk", Mathf.Abs(direction[0]) > 0.1);
-        }
-    }
-
-    protected virtual void FixedUpdate()
-    {
-        activated |=  Bresenham.determineActivation(freeSightChance, sightRadius, transform.position, player.position);
-        if (activated) {
-            MoveEnemy(movement);  // Have enemy follow player
+            MoveEnemy(movement);
         }
     }
 
