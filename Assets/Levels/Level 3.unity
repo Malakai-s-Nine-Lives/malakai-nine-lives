@@ -513,6 +513,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1729495666}
+    - target: {fileID: 4017578251031630262, guid: 84831f2c64ae32044999a81d7ec2efe4, type: 3}
+      propertyPath: DeathMenuUI
+      value: 
+      objectReference: {fileID: 1058080094}
     - target: {fileID: 7043935961497526370, guid: 84831f2c64ae32044999a81d7ec2efe4, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -2233,6 +2237,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1058080094 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6313140402866611464, guid: 243eb6e9cae4a4428bfecd73d23c32b4, type: 3}
+  m_PrefabInstance: {fileID: 618653996}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1094687748
 PrefabInstance:
   m_ObjectHideFlags: 0

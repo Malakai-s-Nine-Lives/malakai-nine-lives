@@ -9,6 +9,8 @@ public class PlayerHealth : MonoBehaviour
     private int currentHealth;
     public float blockTime = 1f;
     private float damageTimer = 0.00f;
+    private float deathTimer = 0.00f;
+    private float corpseTime = 2.00f;
     public bool blocking = false;
     public GameObject DeathMenuUI;
 
@@ -35,6 +37,12 @@ public class PlayerHealth : MonoBehaviour
         // set blocking variable if player is currently blocking
         blocking = Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S);
         if (blocking) anim.Play("Fright");
+
+        // if the death timer has started, continue it
+        if (currentHealth <= 0) deathTimer += Time.deltaTime;
+
+        // call TakeDamage to kill
+        if (deathTimer > corpseTime) PlayerDies();
     }
 
     // Accessed by enemy attack scripts to give damage to the player
@@ -67,19 +75,24 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            // Player dies!
-            anim.SetBool("die", true);
+            PlayerDies();
+        }
+    }
 
-            // Make sure body has hit the floor
-            if (GetComponent<PlayerMovement>().IsGrounded())
-            {
-                // Deactivate the player
-                GetComponent<Collider2D>().enabled = false;
-                GetComponent<PlayerMovement>().enabled = false;
-                GetComponent<PlayerAttack>().enabled = false;
-                GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-                Invoke("toDeathMenu", 2);  // This will take us to the death menu in 2 seconds
-            }
+    public void PlayerDies()
+    {
+        // Player dies!
+        anim.SetBool("die", true);
+
+        // Make sure body has hit the floor
+        if (GetComponent<PlayerMovement>().IsGrounded() ||  deathTimer > corpseTime)
+        {
+            // Deactivate the player
+            GetComponent<Collider2D>().enabled = false;
+            GetComponent<PlayerMovement>().enabled = false;
+            GetComponent<PlayerAttack>().enabled = false;
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            Invoke("toDeathMenu", 2);  // This will take us to the death menu in 2 seconds
         }
     }
 

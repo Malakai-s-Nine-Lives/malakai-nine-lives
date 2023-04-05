@@ -3,8 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    public void changeScene(string sceneName)
+    public void changeScene()
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
