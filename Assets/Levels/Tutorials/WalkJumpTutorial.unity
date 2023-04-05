@@ -1218,7 +1218,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 669943802464946157, guid: fe6170336989e64408acd3977f636aef, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 669943802464946157, guid: fe6170336989e64408acd3977f636aef, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1547,7 +1547,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2257978078779232502, guid: 5f671a2384173b042887f9731138d1d7, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2257978078779232502, guid: 5f671a2384173b042887f9731138d1d7, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2010,6 +2010,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1366319692224036784, guid: 84831f2c64ae32044999a81d7ec2efe4, type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366319692224036784, guid: 84831f2c64ae32044999a81d7ec2efe4, type: 3}
+      propertyPath: jumpingPower
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1366319692224036795, guid: 84831f2c64ae32044999a81d7ec2efe4, type: 3}
       propertyPath: m_Name
       value: Malakai
