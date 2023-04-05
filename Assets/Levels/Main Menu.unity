@@ -180,7 +180,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f4a342e6cd74c41a99f7f9157cef61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volume_slider: {fileID: 0}
   script: {fileID: 256034175}
   mode_text: {fileID: 860876022}
 --- !u!1 &76641407
@@ -1902,7 +1901,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1055836476}
   - component: {fileID: 1055836477}
-  - component: {fileID: 1055836478}
+  - component: {fileID: 1055836479}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -1984,10 +1983,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1055836478}
-        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
-        m_MethodName: changeVolume
-        m_Mode: 0
+      - m_Target: {fileID: 1055836479}
+        m_TargetAssemblyTypeName: VolumeControl, Assembly-CSharp
+        m_MethodName: ChangeVolume
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1996,7 +1995,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1055836478
+--- !u!114 &1055836479
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2005,12 +2004,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1055836475}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2f4a342e6cd74c41a99f7f9157cef61, type: 3}
+  m_Script: {fileID: 11500000, guid: 13feaa23993fd4db9b60ea03309429e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volume_slider: {fileID: 0}
-  script: {fileID: 0}
-  mode_text: {fileID: 0}
+  volumeSlider: {fileID: 1055836477}
 --- !u!1 &1103682500
 GameObject:
   m_ObjectHideFlags: 0

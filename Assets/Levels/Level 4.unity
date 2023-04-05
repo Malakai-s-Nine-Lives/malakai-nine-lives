@@ -1237,7 +1237,7 @@ PrefabInstance:
     - target: {fileID: 3885868812156183859, guid: 72861e03e6cde415f8141a3cc5b816b3, type: 3}
       propertyPath: BarsUI
       value: 
-      objectReference: {fileID: 849192935}
+      objectReference: {fileID: 1659414278}
     - target: {fileID: 3885868812156183864, guid: 72861e03e6cde415f8141a3cc5b816b3, type: 3}
       propertyPath: m_Name
       value: Pause Menu Canvas
