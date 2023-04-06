@@ -11,6 +11,18 @@ public class MainMenu : MonoBehaviour
         // set the default play mode to easy
         PlayerPrefs.SetString("mode", "easy");
         PlayerPrefs.SetInt("health", 100); // start off with 100 health
+
+        // Play the stored version of the volume
+        if (PlayerPrefs.HasKey("musicVolume"))
+        {
+            AudioListener.volume = PlayerPrefs.GetFloat("musicVolume");
+        }
+        else  // Store the volume as 100% if not stored
+        {
+            AudioListener.volume = 1;
+            PlayerPrefs.SetFloat("musicVolume", 1);
+
+        }
         PlayerPrefs.Save();
     }
 

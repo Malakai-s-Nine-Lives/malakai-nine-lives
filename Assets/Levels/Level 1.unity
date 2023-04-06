@@ -146,6 +146,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1366319692224036797, guid: 84831f2c64ae32044999a81d7ec2efe4, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1366319692224036798, guid: 84831f2c64ae32044999a81d7ec2efe4, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1007,6 +1011,10 @@ PrefabInstance:
     - target: {fileID: 3183344043099976671, guid: 9a77f35fb55824c4e9e70ac27297ab24, type: 3}
       propertyPath: m_Name
       value: Left Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 3183344043099976671, guid: 9a77f35fb55824c4e9e70ac27297ab24, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a77f35fb55824c4e9e70ac27297ab24, type: 3}
@@ -2577,7 +2585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5192987303865597741, guid: 0111e2c613b0643e9a54a888c214d749, type: 3}
       propertyPath: m_Name
-      value: A_
+      value: Algorithms
       objectReference: {fileID: 0}
     - target: {fileID: 5192987303865597743, guid: 0111e2c613b0643e9a54a888c214d749, type: 3}
       propertyPath: m_RootOrder
@@ -3568,6 +3576,10 @@ PrefabInstance:
     - target: {fileID: 3183344043099976671, guid: 9a77f35fb55824c4e9e70ac27297ab24, type: 3}
       propertyPath: m_Name
       value: Right Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 3183344043099976671, guid: 9a77f35fb55824c4e9e70ac27297ab24, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a77f35fb55824c4e9e70ac27297ab24, type: 3}

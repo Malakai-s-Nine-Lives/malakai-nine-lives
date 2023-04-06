@@ -186,6 +186,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlyingEnemy1
       objectReference: {fileID: 0}
+    - target: {fileID: 3145908582859921936, guid: bc0d3848771ecce48900976e85090d82, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 3145908582859921938, guid: bc0d3848771ecce48900976e85090d82, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -206,10 +210,18 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6336582835123196484, guid: bc0d3848771ecce48900976e85090d82, type: 3}
+      propertyPath: attackDamage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7412663455509973943, guid: bc0d3848771ecce48900976e85090d82, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 249848094}
+    - target: {fileID: 7529314698321975969, guid: bc0d3848771ecce48900976e85090d82, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7529314698321975969, guid: bc0d3848771ecce48900976e85090d82, type: 3}
       propertyPath: player
       value: 
@@ -587,6 +599,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Left Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 3183344043099976671, guid: 9a77f35fb55824c4e9e70ac27297ab24, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a77f35fb55824c4e9e70ac27297ab24, type: 3}
 --- !u!114 &249848094 stripped
@@ -683,10 +699,18 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6336582835123196484, guid: bc0d3848771ecce48900976e85090d82, type: 3}
+      propertyPath: attackDamage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7412663455509973943, guid: bc0d3848771ecce48900976e85090d82, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 249848094}
+    - target: {fileID: 7529314698321975969, guid: bc0d3848771ecce48900976e85090d82, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7529314698321975969, guid: bc0d3848771ecce48900976e85090d82, type: 3}
       propertyPath: player
       value: 
@@ -1646,7 +1670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2308096236813198759, guid: e224b17de7134ea41b901023a8eb28b6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2308096236813198759, guid: e224b17de7134ea41b901023a8eb28b6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2948,6 +2972,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 3183344043099976671, guid: 9a77f35fb55824c4e9e70ac27297ab24, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a77f35fb55824c4e9e70ac27297ab24, type: 3}
 --- !u!1 &1093453881
@@ -3964,10 +3992,18 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6336582835123196484, guid: bc0d3848771ecce48900976e85090d82, type: 3}
+      propertyPath: attackDamage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7412663455509973943, guid: bc0d3848771ecce48900976e85090d82, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 249848094}
+    - target: {fileID: 7529314698321975969, guid: bc0d3848771ecce48900976e85090d82, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7529314698321975969, guid: bc0d3848771ecce48900976e85090d82, type: 3}
       propertyPath: player
       value: 
@@ -4315,6 +4351,10 @@ PrefabInstance:
     - target: {fileID: 1366319692224036795, guid: 84831f2c64ae32044999a81d7ec2efe4, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366319692224036797, guid: 84831f2c64ae32044999a81d7ec2efe4, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1366319692224036798, guid: 84831f2c64ae32044999a81d7ec2efe4, type: 3}
       propertyPath: m_RootOrder
