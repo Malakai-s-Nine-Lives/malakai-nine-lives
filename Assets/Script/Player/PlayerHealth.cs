@@ -21,8 +21,6 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         // Initialize health
-        Debug.Log("mode is" + PlayerPrefs.GetString("mode"));
-        Debug.Log("current health is: " + PlayerPrefs.GetInt("health") + "out of " + maxHealth);
         healthBar.SetMaxHealth(maxHealth);
         currentHealth = PlayerPrefs.GetString("mode") == "hard" ? PlayerPrefs.GetInt("health") : maxHealth;
         healthBar.SetHealth(currentHealth);
@@ -58,7 +56,6 @@ public class PlayerHealth : MonoBehaviour
             // check to see if user has pressed block button
             if (blocking)
             {
-                Debug.Log("down arrow pressed, block");
                 // block attack
                 damageTimer = 0;
                 return;
@@ -71,7 +68,6 @@ public class PlayerHealth : MonoBehaviour
 
         // Update health bar
         healthBar.SetHealth(currentHealth);
-        Debug.Log(currentHealth);
 
         if (currentHealth <= 0)
         {

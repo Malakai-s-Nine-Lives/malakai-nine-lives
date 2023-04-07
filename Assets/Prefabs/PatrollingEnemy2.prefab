@@ -205,7 +205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   pointValue: 100
-  maxCorpseTime: 5
+  maxCorpseTime: 2
   player: {fileID: 0}
   groundLayer:
     serializedVersion: 2

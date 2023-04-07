@@ -19,7 +19,6 @@ public class DoorController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Door opened? " + doorOpened);
         if (collision.gameObject.name == "Malakai" && doorOpened)
         {
             // save current health of malakai to the game global if in hard mode

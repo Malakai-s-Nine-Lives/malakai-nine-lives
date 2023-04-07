@@ -5,7 +5,6 @@ using UnityEngine;
 public class FlyingEnemyMovement : MonoBehaviour
 {
     public Transform player;  // To react to player movement
-    public int damage = 50;  // Damage value for enemy
     public float moveSpeed = 0.5f;  // Speed of enemy
     public int waitSeconds = 0;  // Time to wait before searching
 
@@ -25,7 +24,8 @@ public class FlyingEnemyMovement : MonoBehaviour
     private bool facingdown;
     public SpriteRenderer sprite_render;  // The enemy's sprite render
 
-    private bool waitDone = false;
+    private bool waitDone = false;  // Bool for if the bird wait
+    private bool pathFollowing = false;  // Bool to see if following path
 
     // Additional Unity Components
     private Animator anim;
@@ -75,8 +75,10 @@ public class FlyingEnemyMovement : MonoBehaviour
         yield return new WaitForSeconds(waitSeconds);  // Wait before moving
         waitDone = true;  // Update bool so update and fixed update can run
         sprite_render.enabled = true;
+        // Get closer to the center of the collider instead of the sprite image
+        Vector2 spriteCenter = new Vector2(player.position.x - 0.1f, player.position.y - 0.2f);
         // Initially request A* to attack the player
-        PathRequest.RequestPath(transform.position, player.position, OnPathFound);
+        PathRequest.RequestPath(transform.position, spriteCenter, OnPathFound);
     }
 
     // Update is called once per frame
@@ -87,12 +89,15 @@ public class FlyingEnemyMovement : MonoBehaviour
             return;
         }
         // Rotate by caluclated angle to face player
-        Vector3 direction = player.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        direction.Normalize();
-        movement = direction;
-        rotation_angle = angle;
-        Flip(movement);  // Flip the image to match the direction rotated
+        if (!pathFollowing)
+        {
+            Vector3 direction = player.position - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            direction.Normalize();
+            movement = direction;
+            rotation_angle = angle;
+            Flip(movement);  // Flip the image to match the direction rotated
+        }
 
         // Set animation variables
         anim.SetBool("fall", enemy_body.velocity.y < 0);
@@ -107,8 +112,10 @@ public class FlyingEnemyMovement : MonoBehaviour
         }
         if (playerPos != (Vector2) player.position)  // If player has moved
         {
+            // Get closer to the center of the collider instead of the sprite image
+            Vector2 spriteCenter = new Vector2(player.position.x - 0.1f, player.position.y - 0.2f);
             // Get an optimal path of attack
-            PathRequest.RequestPath(transform.position, player.position, OnPathFound);
+            PathRequest.RequestPath(transform.position, spriteCenter, OnPathFound);
             playerPos = player.position;  // Update player's current position
         }
     }
@@ -126,23 +133,32 @@ public class FlyingEnemyMovement : MonoBehaviour
 
     IEnumerator FollowPath()
     {
+        Collider2D collision = GetComponent<Collider2D>();
         if (path.Length > 0)  // Only move if we have somewhere to move
         {
-            Debug.Log("path length" + path.Length);
             Vector2 currentWaypoint = path[0];  // Get the waypoint to move to
             while (true)
             {
+                pathFollowing = true; // We are following a path right now
                 // Make sure we have made the previous move
                 if ((Vector2)transform.position == currentWaypoint)
                 {
                     targetIndex++;  // Where we plan to go
-                    if (targetIndex >= path.Length || path.Length == 1)
+
+                    // Stop if we can attack the player or we have traveresed all of our points
+                    if (targetIndex >= path.Length || collision.gameObject.tag.Equals("Player"))
                     {
+                        pathFollowing = false; // Done path following
                         yield break;
                     }
                     currentWaypoint = path[targetIndex];
                 }
-
+                Vector3 direction = currentWaypoint - (Vector2) transform.position;
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                direction.Normalize();
+                movement = direction;
+                rotation_angle = angle;
+                Flip(movement);  // Flip the image to match the direction rotated
                 enemy_body.rotation = rotation_angle;  // Rotate enemy based on direction of travel
                 // Move
                 transform.position = (Vector2) Vector2.MoveTowards((Vector2) transform.position, currentWaypoint, moveSpeed * Time.deltaTime);

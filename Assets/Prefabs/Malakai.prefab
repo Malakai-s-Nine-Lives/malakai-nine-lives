@@ -194,7 +194,7 @@ MonoBehaviour:
   attackCooldown: 0.25
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 2176
 --- !u!114 &4017578251031630262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,6 +227,7 @@ MonoBehaviour:
   progressBar: {fileID: 0}
   door: {fileID: 0}
   progRatio: 0.8
+  opendoorText: {fileID: 0}
 --- !u!1 &7043935961497526370
 GameObject:
   m_ObjectHideFlags: 0

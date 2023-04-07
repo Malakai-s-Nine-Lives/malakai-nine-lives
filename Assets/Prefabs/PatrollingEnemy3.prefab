@@ -174,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   pointValue: 100
-  maxCorpseTime: 5
+  maxCorpseTime: 2
   player: {fileID: 0}
   groundLayer:
     serializedVersion: 2
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 3
-  attackDamage: 25
+  attackDamage: 20
   attackRange: 0.1
   playerLayer:
     serializedVersion: 2
@@ -264,7 +264,7 @@ MonoBehaviour:
   player: {fileID: 0}
   moveSpeed: 1.5
   freeSightChance: 100
-  sightRadius: 5
+  sightRadius: 7
 --- !u!1 &3695214170560054045
 GameObject:
   m_ObjectHideFlags: 0
