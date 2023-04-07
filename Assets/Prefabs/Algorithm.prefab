@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drawGrid: 0
   gridWorldSize: {x: 21.65, y: 10}
-  nodeRadius: 0.25
+  nodeRadius: 0.15
   unwalkableMask:
     serializedVersion: 2
     m_Bits: 8

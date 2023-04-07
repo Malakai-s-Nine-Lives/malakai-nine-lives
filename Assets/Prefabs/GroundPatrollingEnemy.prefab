@@ -27,6 +27,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2102920496239543716, guid: bd3079e6c40562b46a4c8d8a2d1d1bfd, type: 3}
+      propertyPath: maxCorpseTime
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2940406874663803232, guid: bd3079e6c40562b46a4c8d8a2d1d1bfd, type: 3}
       propertyPath: m_Name
       value: GroundPatrollingEnemy
@@ -108,6 +112,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  moveSpeed: 0.5
+  moveSpeed: 0.7
   freeSightChance: 100
   sightRadius: 5

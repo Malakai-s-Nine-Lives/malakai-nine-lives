@@ -75,8 +75,10 @@ public class FlyingEnemyMovement : MonoBehaviour
         yield return new WaitForSeconds(waitSeconds);  // Wait before moving
         waitDone = true;  // Update bool so update and fixed update can run
         sprite_render.enabled = true;
+        // Get closer to the center of the collider instead of the sprite image
+        Vector2 spriteCenter = new Vector2(player.position.x - 0.1f, player.position.y - 0.2f);
         // Initially request A* to attack the player
-        PathRequest.RequestPath(transform.position, player.position, OnPathFound);
+        PathRequest.RequestPath(transform.position, spriteCenter, OnPathFound);
     }
 
     // Update is called once per frame
@@ -110,8 +112,10 @@ public class FlyingEnemyMovement : MonoBehaviour
         }
         if (playerPos != (Vector2) player.position)  // If player has moved
         {
+            // Get closer to the center of the collider instead of the sprite image
+            Vector2 spriteCenter = new Vector2(player.position.x - 0.1f, player.position.y - 0.2f);
             // Get an optimal path of attack
-            PathRequest.RequestPath(transform.position, player.position, OnPathFound);
+            PathRequest.RequestPath(transform.position, spriteCenter, OnPathFound);
             playerPos = player.position;  // Update player's current position
         }
     }
@@ -129,6 +133,7 @@ public class FlyingEnemyMovement : MonoBehaviour
 
     IEnumerator FollowPath()
     {
+        Collider2D collision = GetComponent<Collider2D>();
         if (path.Length > 0)  // Only move if we have somewhere to move
         {
             Vector2 currentWaypoint = path[0];  // Get the waypoint to move to
@@ -139,7 +144,9 @@ public class FlyingEnemyMovement : MonoBehaviour
                 if ((Vector2)transform.position == currentWaypoint)
                 {
                     targetIndex++;  // Where we plan to go
-                    if (targetIndex >= path.Length || path.Length == 1)
+
+                    // Stop if we can attack the player or we have traveresed all of our points
+                    if (targetIndex >= path.Length || collision.gameObject.tag.Equals("Player"))
                     {
                         pathFollowing = false; // Done path following
                         yield break;

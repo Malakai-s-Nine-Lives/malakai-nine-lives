@@ -361,7 +361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1069720315195576119, guid: 1a0db9c544559804d9a41dcd928e0b8b, type: 3}
       propertyPath: sightRadius
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1438754917088606760, guid: 1a0db9c544559804d9a41dcd928e0b8b, type: 3}
       propertyPath: player
@@ -3509,7 +3509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5192987303865597741, guid: 0111e2c613b0643e9a54a888c214d749, type: 3}
       propertyPath: m_Name
-      value: A_
+      value: Algorithms
       objectReference: {fileID: 0}
     - target: {fileID: 5192987303865597743, guid: 0111e2c613b0643e9a54a888c214d749, type: 3}
       propertyPath: m_RootOrder
@@ -4024,7 +4024,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1069720315195576119, guid: 1a0db9c544559804d9a41dcd928e0b8b, type: 3}
       propertyPath: sightRadius
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1438754917088606760, guid: 1a0db9c544559804d9a41dcd928e0b8b, type: 3}
       propertyPath: player
@@ -4410,7 +4410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1069720315195576119, guid: 1a0db9c544559804d9a41dcd928e0b8b, type: 3}
       propertyPath: sightRadius
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1438754917088606760, guid: 1a0db9c544559804d9a41dcd928e0b8b, type: 3}
       propertyPath: player

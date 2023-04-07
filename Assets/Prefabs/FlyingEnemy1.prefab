@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 1
-  attackDamage: 5
+  attackDamage: 10
   attackRange: 0.2
   playerLayer:
     serializedVersion: 2
