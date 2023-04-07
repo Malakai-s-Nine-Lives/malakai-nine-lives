@@ -28,13 +28,11 @@ public class PatrollingEnemy : WalkingEnemyMovement
         
         if (activated && bresenhamResult){
             // Enemy can still see Malakai. Reset the timer.
-            Debug.Log("I can see Malakai");
             startTime = Time.time;
         } else if (activated && !bresenhamResult && (Time.time - startTime > memory) ) {
             // enemy used to be activated 
             // enemy no longer sees Malakai
             // if its been memory2-seconds since enemy last saw malakai
-            Debug.Log("I forgot I saw Malakai");
             // go back to patrol mode
             activated = false;
         }
@@ -46,10 +44,8 @@ public class PatrollingEnemy : WalkingEnemyMovement
             Flip(movement);
             if (allowedToTakeNextStep) {
                 MoveEnemy(movement);  // Have enemy follow player
-                Debug.Log("Activated and next step IS allowed");
                 anim.SetBool("walk", true);
             } else {
-                Debug.Log("Activated but at the boundary");
                 anim.SetBool("walk", false);
             }
 
@@ -82,9 +78,7 @@ public class PatrollingEnemy : WalkingEnemyMovement
     {
         if (collision.GetComponent<DoorController>()) return;
         allowedToTakeNextStep = false;
-        if (activated){
-            Debug.Log("I am activated and at the boundary. I cannot continue.");
-        } else {
+        if (!activated) {
             // in patrol mode
             if (facingLeft){
                 Flip(Vector2.right); // face right
@@ -98,7 +92,6 @@ public class PatrollingEnemy : WalkingEnemyMovement
     {
         if (collision.GetComponent<DoorController>()) return;
         allowedToTakeNextStep = true;
-        Debug.Log("The collider entered");
     }
 
     // Flip the enemy character depending on which direction it is facing

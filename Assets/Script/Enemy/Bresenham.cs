@@ -77,8 +77,6 @@ public class Bresenham : MonoBehaviour
             Node node = grid.NodeFromMapPoint(camera.ScreenToWorldPoint(new Vector3(x,y,z_value)));
             if (node is not null && !node.walkable){
                 // the node is not walkable
-                // Debug.Log(node);
-                // Debug.Log("Malakai is Gone!");
                 return false;
             }
 
@@ -91,7 +89,6 @@ public class Bresenham : MonoBehaviour
         }
         // if there were no ground collisions
         // there is a line of sight to Malakai
-        // Debug.Log("I can see Malakai!!!");
         return true;
     }
 
@@ -110,8 +107,6 @@ public class Bresenham : MonoBehaviour
             Node node = grid.NodeFromMapPoint(camera.ScreenToWorldPoint(new Vector3(x,y,z_value)));
             if (node is not null && !node.walkable){
                 // the node is not walkable
-                // Debug.Log(node);
-                // Debug.Log("Malakai is Gone!");
                 return false;
             }
 
@@ -124,7 +119,6 @@ public class Bresenham : MonoBehaviour
         }
         // if there were no ground collisions
         // there is a line of sight to Malakai
-        // Debug.Log("I can see Malakai!!!");
         return true;
     }
 
@@ -147,13 +141,9 @@ public class Bresenham : MonoBehaviour
         {
             Vector2 vecky = (Vector2) camera.ScreenToWorldPoint(new Vector3(x,y,z));
             Node node = grid.NodeFromMapPoint(vecky);
-            // Debug.Log(node); Debug.Break();
 
             if (node is not null && !node.walkable){
                 // the node is not walkable
-                Debug.Log(node);
-                // Debug.Log("Malakai is Gone!!!");
-                // Debug.DrawRay(enemy_position, player_position, Color.green);
                 return false;
             }
 
@@ -167,7 +157,6 @@ public class Bresenham : MonoBehaviour
         
         // if there were no ground collisions
         // there is a line of sight to Malakai
-        // Debug.Log("I can see Malakai!!!");
         return true;
     }
 }

@@ -59,13 +59,11 @@ public class WalkingEnemyMovement : MonoBehaviour
 
         if (activated && bresenhamResult){
             // Enemy can still see Malakai. Reset the timer.
-            Debug.Log("I can see Malakai");
             startTime = Time.time;
         } else if (activated && !bresenhamResult && (Time.time - startTime > memory) ) {
             // enemy used to be activated
             // enemy no longer sees Malakai
             // if its been memory-seconds since enemy last saw malakai
-            Debug.Log("I forgot I saw Malakai.");
             // the enemy will forget Malakai
             anim.SetBool("Idle", true); // figure out how to do this properly
             activated = false;

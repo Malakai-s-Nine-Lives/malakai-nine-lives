@@ -50,7 +50,6 @@ public class PlayerProgress : MonoBehaviour
         if (currentPoints >= maxPoints)
         {
             // activate the door script
-            Debug.Log("Opening door: ");
             door.OpenDoor();
             StartCoroutine(displaymessage());
         }
