@@ -16,6 +16,10 @@ public class Bresenham : MonoBehaviour
     {
 
     }
+
+    public static int getFour(){
+        return 4;
+    }
     
     void Awake()
     {

@@ -19,6 +19,11 @@ public class PatrollingEnemy : WalkingEnemyMovement
         movement = direction;
     }
 
+    public bool isActivated()
+    {
+        return activated;
+    }
+
     protected virtual void FixedUpdate()
     {
         bool oldActivation = activated;
