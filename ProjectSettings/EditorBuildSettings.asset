@@ -48,6 +48,6 @@ EditorBuildSettings:
     path: Assets/Tests/TestScenes/BresenhamTestWithObstacles.unity
     guid: 604b36589ba394040b3cea8b324f8c1b
   - enabled: 1
-    path: Assets/Tests/TestScenes/AStarTest.unity
+    path: Assets/Tests/TestScenes/AstarTest.unity
     guid: 599154798b9eae349a050798b63bfb41
   m_configObjects: {}

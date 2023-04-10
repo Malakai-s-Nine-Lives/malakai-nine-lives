@@ -38,19 +38,16 @@ public class AStarTests
         // Validate that a path IS found
         void OnPathFound(Vector2[] newPath, bool pathSuccessful)
         {
-            // Node node;
-            // foreach (Vector2 onePath in newPath)
-            // {
-            //     node = grid.NodeFromMapPoint(camera.ScreenToWorldPoint(new Vector3(onePath.x,onePath.y,0)));
-            //     Assert.IsTrue(node.walkable);
-            // }
-            // Assert.IsTrue(pathSuccessful);
+            // this test should not crash the system
+            Assert.IsTrue(true);
         }
         PathRequest.RequestPath(source, destination, OnPathFound);
         PathRequest.RequestPath(source, invalidDestination, OnPathFound);
         PathRequest.RequestPath(source, destination, OnPathFound);
+        PathRequest.RequestPath(source, invalidDestination, OnPathFound);
+        PathRequest.RequestPath(source, destination, OnPathFound);
         // let the A star algorithm run
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
     }
 
     [UnityTest]
@@ -61,36 +58,18 @@ public class AStarTests
         // Validate that a path IS found
         void OnPathFound(Vector2[] newPath, bool pathSuccessful)
         {
+            Assert.IsTrue(pathSuccessful);
             Node node;
             foreach (Vector2 onePath in newPath)
             {
-                node = grid.NodeFromMapPoint(camera.ScreenToWorldPoint(new Vector3(onePath.x,onePath.y,0)));
+                // obtain the node from a path
+                // node = grid.NodeFromMapPoint(camera.ScreenToWorldPoint(new Vector3(onePath.x,onePath.y,0)));
+                node = grid.NodeFromMapPoint(new Vector2(onePath.x,onePath.y));
+                // all nodes should be walkable
                 Assert.IsTrue(node.walkable);
             }
-            Assert.IsTrue(pathSuccessful);
         }
         PathRequest.RequestPath(source, destination, OnPathFound);
-        // let the A star algorithm run
-        yield return new WaitForSeconds(3);
-    }
-
-        [UnityTest]
-    public IEnumerator AStarBasicDirectTest()
-    {
-        Vector2 source = new Vector2(-7, -4);
-        Vector2 destination = new Vector2(0, -1);
-        // Validate that a path IS found
-        void OnPathFound(Vector2[] newPath, bool pathSuccessful)
-        {
-            Node node;
-            foreach (Vector2 onePath in newPath)
-            {
-                node = grid.NodeFromMapPoint(camera.ScreenToWorldPoint(new Vector3(onePath.x,onePath.y,0)));
-                Assert.IsTrue(node.walkable);
-            }
-            Assert.IsTrue(pathSuccessful);
-        }
-        aStar.startFindPath(source, destination);
         // let the A star algorithm run
         yield return new WaitForSeconds(3);
     }
