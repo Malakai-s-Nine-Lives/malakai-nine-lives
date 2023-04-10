@@ -10,6 +10,7 @@ public class EnemyHealth : MonoBehaviour
     private int currentHealth;
     private float corpseTimer = 0;
     public LayerMask groundLayer;
+    private Collider2D boxCollider;
 
     // Additional Unity components
     private Animator anim;
@@ -23,6 +24,9 @@ public class EnemyHealth : MonoBehaviour
 
         // Grab reference to rigidbody
         rb = GetComponent<Rigidbody2D>();
+
+        // Only deactivate the gameobject once it has hit the ground
+        boxCollider = GetComponent<Collider2D>();
 
         // Intialize health
         currentHealth = maxHealth;
@@ -40,6 +44,17 @@ public class EnemyHealth : MonoBehaviour
             {
                 gameObject.SetActive(false);
             }
+
+            // check to see if body has hit the ground yet, if so freeze the body
+            // if the player is touching the ground then disable its collider and freeze it
+            if (Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0.1f, groundLayer).collider != null)
+            {
+                // Make sure it stays in the same position it died in
+                GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+
+                // Deactivate the enemy
+                GetComponent<Collider2D>().enabled = false;
+            }
         }
     }
 
@@ -56,9 +71,6 @@ public class EnemyHealth : MonoBehaviour
             anim.SetBool("die", true);
             GetComponent<EnemyAttack>().enabled = false;
 
-            // Only deactivate the gameobject once it has hit the ground
-            Collider2D boxCollider = GetComponent<Collider2D>();
-
             // Give player the game points
             player.TakePoints(pointValue);
 
@@ -71,15 +83,6 @@ public class EnemyHealth : MonoBehaviour
                 // Set gravity so crow can fall to the ground
                 rb.gravityScale = 2.0f;
                 GetComponent<FlyingEnemyMovement>().enabled = false;
-            }
-
-            if (Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0.1f, groundLayer).collider != null)
-            {
-                // Deactivate the enemy
-                GetComponent<Collider2D>().enabled = false;
-
-                // Make sure it stays in the same position it died in
-                GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             }
         }
     }
