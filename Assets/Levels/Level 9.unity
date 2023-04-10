@@ -544,6 +544,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1753348157}
+    - target: {fileID: 7412663455509973943, guid: bc0d3848771ecce48900976e85090d82, type: 3}
+      propertyPath: pointValue
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7529314698321975969, guid: bc0d3848771ecce48900976e85090d82, type: 3}
       propertyPath: player
       value: 
@@ -883,6 +887,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1753348157}
+    - target: {fileID: 7450798639421152145, guid: a1a49803375e7144dbdffa01549e53ba, type: 3}
+      propertyPath: pointValue
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1a49803375e7144dbdffa01549e53ba, type: 3}
 --- !u!4 &207001495 stripped
@@ -909,6 +917,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1753348157}
+    - target: {fileID: 1438754917088606760, guid: 1a0db9c544559804d9a41dcd928e0b8b, type: 3}
+      propertyPath: pointValue
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2744386026257868524, guid: 1a0db9c544559804d9a41dcd928e0b8b, type: 3}
       propertyPath: m_Name
       value: PatrollingEnemy3 (3)
@@ -1527,6 +1539,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1753348157}
+    - target: {fileID: 7412663455509973943, guid: bc0d3848771ecce48900976e85090d82, type: 3}
+      propertyPath: pointValue
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7529314698321975969, guid: bc0d3848771ecce48900976e85090d82, type: 3}
       propertyPath: player
       value: 
@@ -1630,6 +1646,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1753348157}
+    - target: {fileID: 7450798639421152145, guid: a1a49803375e7144dbdffa01549e53ba, type: 3}
+      propertyPath: pointValue
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1a49803375e7144dbdffa01549e53ba, type: 3}
 --- !u!4 &358571517 stripped
@@ -2459,6 +2479,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1753348157}
+    - target: {fileID: 7412663455509973943, guid: bc0d3848771ecce48900976e85090d82, type: 3}
+      propertyPath: pointValue
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7529314698321975969, guid: bc0d3848771ecce48900976e85090d82, type: 3}
       propertyPath: player
       value: 
@@ -2502,6 +2526,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1753348157}
+    - target: {fileID: 2102920496239543716, guid: bd3079e6c40562b46a4c8d8a2d1d1bfd, type: 3}
+      propertyPath: pointValue
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2940406874663803232, guid: bd3079e6c40562b46a4c8d8a2d1d1bfd, type: 3}
       propertyPath: m_Name
       value: PlatformPatrollingEnemy1
@@ -2584,6 +2612,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1753348157}
+    - target: {fileID: 469111522346853951, guid: 39219d8d1fd2c7641b19c84677b963a0, type: 3}
+      propertyPath: pointValue
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1994405779384242976, guid: 39219d8d1fd2c7641b19c84677b963a0, type: 3}
       propertyPath: player
       value: 
@@ -2666,6 +2698,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1753348157}
+    - target: {fileID: 469111522346853951, guid: 39219d8d1fd2c7641b19c84677b963a0, type: 3}
+      propertyPath: pointValue
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1994405779384242976, guid: 39219d8d1fd2c7641b19c84677b963a0, type: 3}
       propertyPath: player
       value: 
@@ -2756,6 +2792,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1753348157}
+    - target: {fileID: 1438754917088606760, guid: 1a0db9c544559804d9a41dcd928e0b8b, type: 3}
+      propertyPath: pointValue
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2744386026257868524, guid: 1a0db9c544559804d9a41dcd928e0b8b, type: 3}
       propertyPath: m_Name
       value: PatrollingEnemy3 (2)
@@ -2990,6 +3030,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1753348157}
+    - target: {fileID: 469111522346853951, guid: 39219d8d1fd2c7641b19c84677b963a0, type: 3}
+      propertyPath: pointValue
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1994405779384242976, guid: 39219d8d1fd2c7641b19c84677b963a0, type: 3}
       propertyPath: player
       value: 
@@ -3150,6 +3194,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1753348157}
+    - target: {fileID: 1438754917088606760, guid: 1a0db9c544559804d9a41dcd928e0b8b, type: 3}
+      propertyPath: pointValue
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2744386026257868524, guid: 1a0db9c544559804d9a41dcd928e0b8b, type: 3}
       propertyPath: m_Name
       value: PatrollingEnemy3
@@ -3416,10 +3464,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -4443,6 +4491,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1753348157}
+    - target: {fileID: 7412663455509973943, guid: bc0d3848771ecce48900976e85090d82, type: 3}
+      propertyPath: pointValue
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7529314698321975969, guid: bc0d3848771ecce48900976e85090d82, type: 3}
       propertyPath: player
       value: 
@@ -4482,6 +4534,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1753348157}
+    - target: {fileID: 1438754917088606760, guid: 1a0db9c544559804d9a41dcd928e0b8b, type: 3}
+      propertyPath: pointValue
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2744386026257868524, guid: 1a0db9c544559804d9a41dcd928e0b8b, type: 3}
       propertyPath: m_Name
       value: PatrollingEnemy3 (1)

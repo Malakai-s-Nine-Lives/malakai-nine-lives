@@ -458,7 +458,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WalkingEnemy1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1565254824677297023, guid: 0a9520afeb2343d46864dc50a29ef042, type: 3}
+    - {fileID: 5985563968287744811, guid: 0a9520afeb2343d46864dc50a29ef042, type: 3}
+    - {fileID: 4257545725464112816, guid: 0a9520afeb2343d46864dc50a29ef042, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0a9520afeb2343d46864dc50a29ef042, type: 3}
 --- !u!1 &715656531
 GameObject:
@@ -530,10 +533,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -897,7 +900,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1645681584}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
         m_MethodName: changeScene
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -999,7 +1002,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WalkingEnemy2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1941282513124090675, guid: 4a60a66bc80938840a33eaebf3fa0882, type: 3}
+    - {fileID: 8283804003072880296, guid: 4a60a66bc80938840a33eaebf3fa0882, type: 3}
+    - {fileID: 3773422299981432572, guid: 4a60a66bc80938840a33eaebf3fa0882, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4a60a66bc80938840a33eaebf3fa0882, type: 3}
 --- !u!1 &1470212762
 GameObject:
@@ -1397,7 +1403,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlyingEnemy1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7529314698321975969, guid: bc0d3848771ecce48900976e85090d82, type: 3}
+    - {fileID: 6336582835123196484, guid: bc0d3848771ecce48900976e85090d82, type: 3}
+    - {fileID: 7412663455509973943, guid: bc0d3848771ecce48900976e85090d82, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bc0d3848771ecce48900976e85090d82, type: 3}
 --- !u!1 &1767253107
 GameObject:
@@ -1626,7 +1635,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8116733489429133085, guid: 84831f2c64ae32044999a81d7ec2efe4, type: 3}
+    - {fileID: 4017578251031630262, guid: 84831f2c64ae32044999a81d7ec2efe4, type: 3}
+    - {fileID: 7124806362750407426, guid: 84831f2c64ae32044999a81d7ec2efe4, type: 3}
+    - {fileID: 1366319692224036784, guid: 84831f2c64ae32044999a81d7ec2efe4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 84831f2c64ae32044999a81d7ec2efe4, type: 3}
 --- !u!212 &7150383686194159936
 SpriteRenderer:
