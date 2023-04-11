@@ -14,7 +14,6 @@ public class AStarTests
     [OneTimeSetUp]
     public void LoadAStarScene()
     {
-        Debug.Log("Loading the AStarTest scene");
         SceneManager.LoadScene("AStarTest");
         // wait for the scene to load
     }
@@ -22,7 +21,6 @@ public class AStarTests
     [UnitySetUp]
     public IEnumerator WaitForGameObjectsToLoad()
     {
-        Debug.Log("AStarTest: wait for game objects to load");
         yield return new WaitForSeconds(1);
         grid = GameObject.Find("Algorithms").GetComponent<MapGrid>();
         aStar = GameObject.Find("Algorithms").GetComponent<AStar>();

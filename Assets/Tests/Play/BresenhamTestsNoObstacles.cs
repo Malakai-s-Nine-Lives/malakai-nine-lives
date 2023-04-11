@@ -11,7 +11,6 @@ public class BresenhamTestsNoObstacles: BresenhamTests
     [OneTimeSetUp]
     public void LoadBresenhamTestScene()
     {
-        Debug.Log("Loading the BresenhamTestValid scene");
         SceneManager.LoadScene("BresenhamTestNoObstacles");
     }
 

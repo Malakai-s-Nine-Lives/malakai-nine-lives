@@ -18,7 +18,6 @@ public class BresenhamTests
     [UnitySetUp]
     public IEnumerator WaitForGameObjectsToLoad()
     {
-        Debug.Log("Waiting for game objects to load");
         yield return new WaitForSeconds(1);
     }
 }
