@@ -20,8 +20,9 @@ public class FlyingEnemyMovement : MonoBehaviour
     private Vector2 playerPos;  // Store Player position
 
     // Booleans for the rotation direction of the flying enemy
-    private bool facingLeft;
-    private bool facingdown;
+    private bool facingLeft = false;
+    private bool facingdown = false;
+    private bool canFlip = false;  // Keep charge of flipping once a frame
     public SpriteRenderer sprite_render;  // The enemy's sprite render
 
     private bool waitDone = false;  // Bool for if the bird wait
@@ -46,25 +47,6 @@ public class FlyingEnemyMovement : MonoBehaviour
         Vector3 direction = player.position - transform.position;
         direction.Normalize();
         playerPos = player.position;
-
-        // Initialize the left and down values depending on current enemy
-        // rotation
-        if (direction[0] < 0)
-        {
-            facingLeft = true;
-        }
-        else
-        {
-            facingLeft = false;
-        }
-        if (direction[1] < 0)
-        {
-            facingdown = true;
-        } else
-        {
-            facingdown = false;
-        }
-
         Flip(direction); // Get correct position initially
 
     }
@@ -120,6 +102,13 @@ public class FlyingEnemyMovement : MonoBehaviour
         }
     }
 
+    private void LateUpdate()
+    {
+        // Called once a frame to allow the bird to flip and avoid glitches
+        canFlip = true;
+        print("update" + this.name);
+    }
+
     public void OnPathFound(Vector2[] newPath, bool pathSuccessful)
     {
         if (pathSuccessful)  // Successful path found
@@ -171,10 +160,15 @@ public class FlyingEnemyMovement : MonoBehaviour
     // Flip the direction based on the quadrant the rotation is
     private void Flip(Vector2 direction)
     {
-        if (IsDown(movement) && IsLeft(movement))  // Quadrant 4
+        if (!canFlip)  // Only flip if you haven't this frame
+        {
+            return;
+        }
+        canFlip = false;  // Cannot flip for this frame now
+        if (IsDown(direction) && IsLeft(direction))  // Quadrant 4
         {
             // Make sure we havent flipped in this direction already
-            if (IsDown(movement) != facingdown || IsLeft(movement) != facingLeft)
+            if (IsDown(direction) != facingdown || IsLeft(direction) != facingLeft)
             {
                 // Flip and save new direction
                 Vector3 localScale = transform.localScale;
@@ -201,9 +195,9 @@ public class FlyingEnemyMovement : MonoBehaviour
         }
 
         // Repeat above described process for the other 3 quadrants
-        else if (!IsDown(movement) && !IsLeft(movement))  // Quadrant 2
+        else if (!IsDown(direction) && !IsLeft(direction))  // Quadrant 2
         {
-            if (IsDown(movement) != facingdown || IsLeft(movement) != facingLeft)
+            if (IsDown(direction) != facingdown || IsLeft(direction) != facingLeft)
             {
                 Vector3 localScale = transform.localScale;
                 if (localScale.x < 0)
@@ -220,9 +214,9 @@ public class FlyingEnemyMovement : MonoBehaviour
                 facingLeft = false;
             }
         }
-        else if (!IsDown(movement) && IsLeft(movement))  // Quadrant 3
+        else if (!IsDown(direction) && IsLeft(direction))  // Quadrant 3
         {
-            if (IsDown(movement) != facingdown || IsLeft(movement) != facingLeft)
+            if (IsDown(direction) != facingdown || IsLeft(direction) != facingLeft)
             {
                 Vector3 localScale = transform.localScale;
                 if (localScale.x < 0)
@@ -239,9 +233,9 @@ public class FlyingEnemyMovement : MonoBehaviour
                 facingLeft = true;
             }
         }
-        else if (IsDown(movement) && !IsLeft(movement))  // Quadrant 1
+        else if (IsDown(direction) && !IsLeft(direction))  // Quadrant 1
         {
-            if (IsDown(movement) != facingdown || IsLeft(movement) != facingLeft)
+            if (IsDown(direction) != facingdown || IsLeft(direction) != facingLeft)
             {
                 Vector3 localScale = transform.localScale;
                 if (localScale.x < 0)
