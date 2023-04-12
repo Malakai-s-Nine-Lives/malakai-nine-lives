@@ -8,171 +8,23 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PixelRect:
-    serializedVersion: 2
-    x: 2068
-    y: 59
-    width: 321
-    height: 573
-  m_ShowMode: 0
-  m_Title: Publish
-  m_RootView: {fileID: 5}
-  m_MinSize: {x: 300, y: 321}
-  m_MaxSize: {x: 600, y: 621}
-  m_Maximized: 0
---- !u!114 &2
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PixelRect:
-    serializedVersion: 2
-    x: 1968
-    y: 301
-    width: 800
-    height: 553
-  m_ShowMode: 0
-  m_Title: Package Manager
-  m_RootView: {fileID: 7}
-  m_MinSize: {x: 800, y: 271}
-  m_MaxSize: {x: 4000, y: 4021}
-  m_Maximized: 0
---- !u!114 &3
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 1721
-    y: 51
-    width: 1718
-    height: 1348
+    x: 0
+    y: 43
+    width: 1920
+    height: 989
   m_ShowMode: 4
   m_Title: Timeline
-  m_RootView: {fileID: 14}
+  m_RootView: {fileID: 8}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
-  m_Maximized: 0
---- !u!114 &4
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: PublisherWindow
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 321
-    height: 573
-  m_MinSize: {x: 300, y: 321}
-  m_MaxSize: {x: 600, y: 621}
-  m_ActualView: {fileID: 20}
-  m_Panes:
-  - {fileID: 20}
-  m_Selected: 0
-  m_LastSelected: 0
---- !u!114 &5
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 4}
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 321
-    height: 573
-  m_MinSize: {x: 300, y: 321}
-  m_MaxSize: {x: 600, y: 621}
-  vertical: 0
-  controlID: 27106
---- !u!114 &6
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: PackageManagerWindow
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 800
-    height: 553
-  m_MinSize: {x: 800, y: 250}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 21}
-  m_Panes:
-  - {fileID: 21}
-  m_Selected: 0
-  m_LastSelected: 0
---- !u!114 &7
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 6}
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 800
-    height: 553
-  m_MinSize: {x: 800, y: 271}
-  m_MaxSize: {x: 4000, y: 4021}
-  vertical: 0
-  controlID: 26985
---- !u!114 &8
+  m_Maximized: 1
+--- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -187,19 +39,19 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 737
+    x: 746
     y: 0
-    width: 660
-    height: 664
+    width: 615
+    height: 481
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 22}
+  m_ActualView: {fileID: 15}
   m_Panes:
-  - {fileID: 24}
-  - {fileID: 22}
+  - {fileID: 17}
+  - {fileID: 15}
   m_Selected: 1
   m_LastSelected: 0
---- !u!114 &9
+--- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -212,19 +64,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 13}
-  - {fileID: 8}
+  - {fileID: 7}
+  - {fileID: 2}
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 634
-    width: 1397
-    height: 664
+    y: 458
+    width: 1361
+    height: 481
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 142
---- !u!114 &10
+  controlID: 43
+--- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -237,19 +89,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 17}
   - {fileID: 11}
+  - {fileID: 5}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 30
-    width: 1718
-    height: 1298
+    width: 1920
+    height: 939
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 55
---- !u!114 &11
+  controlID: 104
+--- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -259,24 +111,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: InspectorWindow
+  m_Name: TestRunnerWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1397
+    x: 1361
     y: 0
-    width: 321
-    height: 1298
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 27}
+    width: 559
+    height: 939
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 14}
   m_Panes:
-  - {fileID: 27}
-  - {fileID: 25}
+  - {fileID: 14}
+  - {fileID: 20}
+  - {fileID: 18}
   m_Selected: 0
   m_LastSelected: 1
---- !u!114 &12
+--- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -293,16 +146,16 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 341
-    height: 634
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 28}
+    width: 333
+    height: 458
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 21}
   m_Panes:
-  - {fileID: 28}
+  - {fileID: 21}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &13
+--- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -319,17 +172,17 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 737
-    height: 664
+    width: 746
+    height: 481
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 26}
+  m_ActualView: {fileID: 19}
   m_Panes:
-  - {fileID: 26}
-  - {fileID: 31}
+  - {fileID: 19}
+  - {fileID: 24}
   m_Selected: 0
   m_LastSelected: 1
---- !u!114 &14
+--- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -342,22 +195,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 15}
+  - {fileID: 9}
+  - {fileID: 4}
   - {fileID: 10}
-  - {fileID: 16}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1718
-    height: 1348
+    width: 1920
+    height: 989
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
   m_TopViewHeight: 30
   m_UseBottomView: 1
   m_BottomViewHeight: 20
---- !u!114 &15
+--- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -374,12 +227,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1718
+    width: 1920
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
   m_LastLoadedLayoutName: 
---- !u!114 &16
+--- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -395,37 +248,12 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 1328
-    width: 1718
+    y: 969
+    width: 1920
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
---- !u!114 &17
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 18}
-  - {fileID: 9}
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1397
-    height: 1298
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 16192, y: 16192}
-  vertical: 1
-  controlID: 56
---- !u!114 &18
+--- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -439,18 +267,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 12}
-  - {fileID: 19}
+  - {fileID: 3}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1397
-    height: 634
+    width: 1361
+    height: 939
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 16192, y: 16192}
+  vertical: 1
+  controlID: 42
+--- !u!114 &12
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 6}
+  - {fileID: 13}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1361
+    height: 458
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 57
---- !u!114 &19
+  controlID: 19
+--- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -465,20 +318,20 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 341
+    x: 333
     y: 0
-    width: 1056
-    height: 634
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 30}
+    width: 1028
+    height: 458
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 23}
   m_Panes:
-  - {fileID: 29}
-  - {fileID: 30}
+  - {fileID: 22}
   - {fileID: 23}
+  - {fileID: 16}
   m_Selected: 1
   m_LastSelected: 2
---- !u!114 &20
+--- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -487,54 +340,827 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 810a5b0c369939e45bd85ac3b34dc728, type: 3}
+  m_Script: {fileID: 13401, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MinSize: {x: 300, y: 300}
-  m_MaxSize: {x: 600, y: 600}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
-    m_Text: Publish
+    m_Text: Test Runner
     m_Image: {fileID: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 2068
-    y: 59
-    width: 321
-    height: 552
+    x: 1361
+    y: 73
+    width: 558
+    height: 918
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
---- !u!114 &21
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 13953, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 800, y: 250}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Package Manager
-    m_Image: {fileID: -2824328813065806953, guid: 0000000000000000d000000000000000, type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 1968
-    y: 301
-    width: 800
-    height: 532
-  m_ViewDataDictionary: {fileID: 0}
-  m_OverlayCanvas:
-    m_LastAppliedPresetName: Default
-    m_SaveData: []
---- !u!114 &22
+  m_Spl:
+    ID: 369
+    splitterInitialOffset: 789
+    currentActiveSplitter: -1
+    realSizes:
+    - 717
+    - 131
+    relativeSizes:
+    - 0.8455189
+    - 0.15448111
+    minSizes:
+    - 32
+    - 32
+    maxSizes:
+    - 0
+    - 0
+    lastTotalSize: 848
+    splitSize: 6
+    xOffset: 0
+    m_Version: 1
+    oldRealSizes: 
+    oldMinSizes: 
+    oldMaxSizes: 
+    oldSplitSize: 0
+  m_TestTypeToolbarIndex: 0
+  m_PlayModeTestListGUI:
+    m_Window: {fileID: 14}
+    m_NewResultList:
+    - id: 1004
+      uniqueId: '[MalakaisNineLives][suite]'
+      name: MalakaisNineLives
+      fullName: MalakaisNineLives
+      resultStatus: 1
+      duration: 30.166828
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    - id: 1044
+      uniqueId: '[Play][C:/Users/krist/OneDrive/Desktop/malakai-nine-lives/Library/ScriptAssemblies/Play.dll][suite]'
+      name: Play.dll
+      fullName: C:/Users/krist/OneDrive/Desktop/malakai-nine-lives/Library/ScriptAssemblies/Play.dll
+      resultStatus: 1
+      duration: 29.986126
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1004
+      parentUniqueId: '[MalakaisNineLives][suite]'
+    - id: 1005
+      uniqueId: Play.dll/[Play][AStarTests][suite]
+      name: AStarTests
+      fullName: AStarTests
+      resultStatus: 1
+      duration: 14.461474
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1044
+      parentUniqueId: '[Play][C:/Users/krist/OneDrive/Desktop/malakai-nine-lives/Library/ScriptAssemblies/Play.dll][suite]'
+    - id: 1007
+      uniqueId: Play.dll/AStarTests/[Play][AStarTests.AStarBasicTest]
+      name: AStarBasicTest
+      fullName: AStarTests.AStarBasicTest
+      resultStatus: 1
+      duration: 4.3948364
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1005
+      parentUniqueId: Play.dll/[Play][AStarTests][suite]
+    - id: 1008
+      uniqueId: Play.dll/AStarTests/[Play][AStarTests.AStarInvalid]
+      name: AStarInvalid
+      fullName: AStarTests.AStarInvalid
+      resultStatus: 1
+      duration: 4.0166507
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1005
+      parentUniqueId: Play.dll/[Play][AStarTests][suite]
+    - id: 1006
+      uniqueId: Play.dll/AStarTests/[Play][AStarTests.AStarMultipleRequests]
+      name: AStarMultipleRequests
+      fullName: AStarTests.AStarMultipleRequests
+      resultStatus: 1
+      duration: 6.020873
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1005
+      parentUniqueId: Play.dll/[Play][AStarTests][suite]
+    - id: 1009
+      uniqueId: Play.dll/[Play][BresenhamTestsNoObstacles][suite]
+      name: BresenhamTestsNoObstacles
+      fullName: BresenhamTestsNoObstacles
+      resultStatus: 1
+      duration: 7.4417243
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1044
+      parentUniqueId: '[Play][C:/Users/krist/OneDrive/Desktop/malakai-nine-lives/Library/ScriptAssemblies/Play.dll][suite]'
+    - id: 1015
+      uniqueId: Play.dll/BresenhamTestsNoObstacles/[Play][BresenhamTestsNoObstacles.BresenhamNoObstaclesDiagonalInvalidAndTooFar]
+      name: BresenhamNoObstaclesDiagonalInvalidAndTooFar
+      fullName: BresenhamTestsNoObstacles.BresenhamNoObstaclesDiagonalInvalidAndTooFar
+      resultStatus: 1
+      duration: 1.1343935
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: Play.dll/[Play][BresenhamTestsNoObstacles][suite]
+    - id: 1016
+      uniqueId: Play.dll/BresenhamTestsNoObstacles/[Play][BresenhamTestsNoObstacles.BresenhamNoObstaclesDiagonalQ2ToQ4]
+      name: BresenhamNoObstaclesDiagonalQ2ToQ4
+      fullName: BresenhamTestsNoObstacles.BresenhamNoObstaclesDiagonalQ2ToQ4
+      resultStatus: 1
+      duration: 1.0655982
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: Play.dll/[Play][BresenhamTestsNoObstacles][suite]
+    - id: 1014
+      uniqueId: Play.dll/BresenhamTestsNoObstacles/[Play][BresenhamTestsNoObstacles.BresenhamNoObstaclesDiagonalValid]
+      name: BresenhamNoObstaclesDiagonalValid
+      fullName: BresenhamTestsNoObstacles.BresenhamNoObstaclesDiagonalValid
+      resultStatus: 1
+      duration: 1.0654386
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: Play.dll/[Play][BresenhamTestsNoObstacles][suite]
+    - id: 1012
+      uniqueId: Play.dll/BresenhamTestsNoObstacles/[Play][BresenhamTestsNoObstacles.BresenhamNoObstaclesRightValid]
+      name: BresenhamNoObstaclesRightValid
+      fullName: BresenhamTestsNoObstacles.BresenhamNoObstaclesRightValid
+      resultStatus: 1
+      duration: 1.0320956
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: Play.dll/[Play][BresenhamTestsNoObstacles][suite]
+    - id: 1013
+      uniqueId: Play.dll/BresenhamTestsNoObstacles/[Play][BresenhamTestsNoObstacles.BresenhamNoObstaclesRightValidButTooFar]
+      name: BresenhamNoObstaclesRightValidButTooFar
+      fullName: BresenhamTestsNoObstacles.BresenhamNoObstaclesRightValidButTooFar
+      resultStatus: 1
+      duration: 1.0409235
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: Play.dll/[Play][BresenhamTestsNoObstacles][suite]
+    - id: 1010
+      uniqueId: Play.dll/BresenhamTestsNoObstacles/[Play][BresenhamTestsNoObstacles.BresenhamNoObstaclesUpValid]
+      name: BresenhamNoObstaclesUpValid
+      fullName: BresenhamTestsNoObstacles.BresenhamNoObstaclesUpValid
+      resultStatus: 1
+      duration: 1.0367138
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: Play.dll/[Play][BresenhamTestsNoObstacles][suite]
+    - id: 1011
+      uniqueId: Play.dll/BresenhamTestsNoObstacles/[Play][BresenhamTestsNoObstacles.BresenhamNoObstaclesUpValidButTooFar]
+      name: BresenhamNoObstaclesUpValidButTooFar
+      fullName: BresenhamTestsNoObstacles.BresenhamNoObstaclesUpValidButTooFar
+      resultStatus: 1
+      duration: 1.0504069
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: Play.dll/[Play][BresenhamTestsNoObstacles][suite]
+    - id: 1017
+      uniqueId: Play.dll/[Play][BresenhamTestsWithObstacles][suite]
+      name: BresenhamTestsWithObstacles
+      fullName: BresenhamTestsWithObstacles
+      resultStatus: 1
+      duration: 4.2301526
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1044
+      parentUniqueId: '[Play][C:/Users/krist/OneDrive/Desktop/malakai-nine-lives/Library/ScriptAssemblies/Play.dll][suite]'
+    - id: 1020
+      uniqueId: Play.dll/BresenhamTestsWithObstacles/[Play][BresenhamTestsWithObstacles.BresenhamWithObstaclesDiagonaInvalid]
+      name: BresenhamWithObstaclesDiagonaInvalid
+      fullName: BresenhamTestsWithObstacles.BresenhamWithObstaclesDiagonaInvalid
+      resultStatus: 1
+      duration: 1.1146239
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1017
+      parentUniqueId: Play.dll/[Play][BresenhamTestsWithObstacles][suite]
+    - id: 1021
+      uniqueId: Play.dll/BresenhamTestsWithObstacles/[Play][BresenhamTestsWithObstacles.BresenhamWithObstaclesDiagonalQ2ToQ4]
+      name: BresenhamWithObstaclesDiagonalQ2ToQ4
+      fullName: BresenhamTestsWithObstacles.BresenhamWithObstaclesDiagonalQ2ToQ4
+      resultStatus: 1
+      duration: 1.0301944
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1017
+      parentUniqueId: Play.dll/[Play][BresenhamTestsWithObstacles][suite]
+    - id: 1019
+      uniqueId: Play.dll/BresenhamTestsWithObstacles/[Play][BresenhamTestsWithObstacles.BresenhamWithObstaclesRightInvalid]
+      name: BresenhamWithObstaclesRightInvalid
+      fullName: BresenhamTestsWithObstacles.BresenhamWithObstaclesRightInvalid
+      resultStatus: 1
+      duration: 1.033178
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1017
+      parentUniqueId: Play.dll/[Play][BresenhamTestsWithObstacles][suite]
+    - id: 1018
+      uniqueId: Play.dll/BresenhamTestsWithObstacles/[Play][BresenhamTestsWithObstacles.BresenhamWithObstaclesUpInvalid]
+      name: BresenhamWithObstaclesUpInvalid
+      fullName: BresenhamTestsWithObstacles.BresenhamWithObstaclesUpInvalid
+      resultStatus: 1
+      duration: 1.032819
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1017
+      parentUniqueId: Play.dll/[Play][BresenhamTestsWithObstacles][suite]
+    - id: 1022
+      uniqueId: Play.dll/[Play][HeapTests][suite]
+      name: HeapTests
+      fullName: HeapTests
+      resultStatus: 1
+      duration: 0.0263109
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1044
+      parentUniqueId: '[Play][C:/Users/krist/OneDrive/Desktop/malakai-nine-lives/Library/ScriptAssemblies/Play.dll][suite]'
+    - id: 1024
+      uniqueId: Play.dll/HeapTests/[Play][HeapTests.HeapTestsAddThreeNodes]
+      name: HeapTestsAddThreeNodes
+      fullName: HeapTests.HeapTestsAddThreeNodes
+      resultStatus: 1
+      duration: 0.0098869
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1022
+      parentUniqueId: Play.dll/[Play][HeapTests][suite]
+    - id: 1025
+      uniqueId: Play.dll/HeapTests/[Play][HeapTests.HeapTestsPop]
+      name: HeapTestsPop
+      fullName: HeapTests.HeapTestsPop
+      resultStatus: 1
+      duration: 0.0005853
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1022
+      parentUniqueId: Play.dll/[Play][HeapTests][suite]
+    - id: 1023
+      uniqueId: Play.dll/HeapTests/[Play][HeapTests.HeapTestsSimpleAdd]
+      name: HeapTestsSimpleAdd
+      fullName: HeapTests.HeapTestsSimpleAdd
+      resultStatus: 1
+      duration: 0.000439
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1022
+      parentUniqueId: Play.dll/[Play][HeapTests][suite]
+    - id: 1026
+      uniqueId: Play.dll/HeapTests/[Play][HeapTests.HeapTestsUpdate]
+      name: HeapTestsUpdate
+      fullName: HeapTests.HeapTestsUpdate
+      resultStatus: 1
+      duration: 0.0004486
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1022
+      parentUniqueId: Play.dll/[Play][HeapTests][suite]
+    - id: 1027
+      uniqueId: Play.dll/[Play][MapGridTests][suite]
+      name: MapGridTests
+      fullName: MapGridTests
+      resultStatus: 1
+      duration: 3.7505045
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1044
+      parentUniqueId: '[Play][C:/Users/krist/OneDrive/Desktop/malakai-nine-lives/Library/ScriptAssemblies/Play.dll][suite]'
+    - id: 1028
+      uniqueId: Play.dll/MapGridTests/[Play][MapGridTests.MapGridTestsNonWalkableNode]
+      name: MapGridTestsNonWalkableNode
+      fullName: MapGridTests.MapGridTestsNonWalkableNode
+      resultStatus: 1
+      duration: 1.6825593
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1027
+      parentUniqueId: Play.dll/[Play][MapGridTests][suite]
+    - id: 1030
+      uniqueId: Play.dll/MapGridTests/[Play][MapGridTests.MapGridTestsSize]
+      name: MapGridTestsSize
+      fullName: MapGridTests.MapGridTestsSize
+      resultStatus: 1
+      duration: 1.0287246
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1027
+      parentUniqueId: Play.dll/[Play][MapGridTests][suite]
+    - id: 1029
+      uniqueId: Play.dll/MapGridTests/[Play][MapGridTests.MapGridTestsWalkableNode]
+      name: MapGridTestsWalkableNode
+      fullName: MapGridTests.MapGridTestsWalkableNode
+      resultStatus: 1
+      duration: 1.0270607
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1027
+      parentUniqueId: Play.dll/[Play][MapGridTests][suite]
+    - id: 1031
+      uniqueId: Play.dll/[Play][NodeTests][suite]
+      name: NodeTests
+      fullName: NodeTests
+      resultStatus: 1
+      duration: 0.0201
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1044
+      parentUniqueId: '[Play][C:/Users/krist/OneDrive/Desktop/malakai-nine-lives/Library/ScriptAssemblies/Play.dll][suite]'
+    - id: 1037
+      uniqueId: Play.dll/NodeTests/[Play][NodeTests.NodeTestsCost]
+      name: NodeTestsCost
+      fullName: NodeTests.NodeTestsCost
+      resultStatus: 1
+      duration: 0.0004494
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1031
+      parentUniqueId: Play.dll/[Play][NodeTests][suite]
+    - id: 1039
+      uniqueId: Play.dll/NodeTests/[Play][NodeTests.NodeTestsFValue]
+      name: NodeTestsFValue
+      fullName: NodeTests.NodeTestsFValue
+      resultStatus: 1
+      duration: 0.000289
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1031
+      parentUniqueId: Play.dll/[Play][NodeTests][suite]
+    - id: 1032
+      uniqueId: Play.dll/NodeTests/[Play][NodeTests.NodeTestsGridXValue]
+      name: NodeTestsGridXValue
+      fullName: NodeTests.NodeTestsGridXValue
+      resultStatus: 1
+      duration: 0.0002055
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1031
+      parentUniqueId: Play.dll/[Play][NodeTests][suite]
+    - id: 1033
+      uniqueId: Play.dll/NodeTests/[Play][NodeTests.NodeTestsGridYValue]
+      name: NodeTestsGridYValue
+      fullName: NodeTests.NodeTestsGridYValue
+      resultStatus: 1
+      duration: 0.0001667
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1031
+      parentUniqueId: Play.dll/[Play][NodeTests][suite]
+    - id: 1040
+      uniqueId: Play.dll/NodeTests/[Play][NodeTests.NodeTestsHeapIndex]
+      name: NodeTestsHeapIndex
+      fullName: NodeTests.NodeTestsHeapIndex
+      resultStatus: 1
+      duration: 0.0001974
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1031
+      parentUniqueId: Play.dll/[Play][NodeTests][suite]
+    - id: 1038
+      uniqueId: Play.dll/NodeTests/[Play][NodeTests.NodeTestsHeuristic]
+      name: NodeTestsHeuristic
+      fullName: NodeTests.NodeTestsHeuristic
+      resultStatus: 1
+      duration: 0.0001651
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1031
+      parentUniqueId: Play.dll/[Play][NodeTests][suite]
+    - id: 1035
+      uniqueId: Play.dll/NodeTests/[Play][NodeTests.NodeTestsIsNotWalkable]
+      name: NodeTestsIsNotWalkable
+      fullName: NodeTests.NodeTestsIsNotWalkable
+      resultStatus: 1
+      duration: 0.0002027
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1031
+      parentUniqueId: Play.dll/[Play][NodeTests][suite]
+    - id: 1034
+      uniqueId: Play.dll/NodeTests/[Play][NodeTests.NodeTestsIsWalkable]
+      name: NodeTestsIsWalkable
+      fullName: NodeTests.NodeTestsIsWalkable
+      resultStatus: 1
+      duration: 0.0001472
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1031
+      parentUniqueId: Play.dll/[Play][NodeTests][suite]
+    - id: 1042
+      uniqueId: Play.dll/NodeTests/[Play][NodeTests.NodeTestsNonZeroCompareTo]
+      name: NodeTestsNonZeroCompareTo
+      fullName: NodeTests.NodeTestsNonZeroCompareTo
+      resultStatus: 1
+      duration: 0.0001915
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1031
+      parentUniqueId: Play.dll/[Play][NodeTests][suite]
+    - id: 1043
+      uniqueId: Play.dll/NodeTests/[Play][NodeTests.NodeTestsToString]
+      name: NodeTestsToString
+      fullName: NodeTests.NodeTestsToString
+      resultStatus: 1
+      duration: 0.0007366
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1031
+      parentUniqueId: Play.dll/[Play][NodeTests][suite]
+    - id: 1036
+      uniqueId: Play.dll/NodeTests/[Play][NodeTests.NodeTestsVectorValue]
+      name: NodeTestsVectorValue
+      fullName: NodeTests.NodeTestsVectorValue
+      resultStatus: 1
+      duration: 0.0023461
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1031
+      parentUniqueId: Play.dll/[Play][NodeTests][suite]
+    - id: 1041
+      uniqueId: Play.dll/NodeTests/[Play][NodeTests.NodeTestsZeroCompareTo]
+      name: NodeTestsZeroCompareTo
+      fullName: NodeTests.NodeTestsZeroCompareTo
+      resultStatus: 1
+      duration: 0.0003753
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1031
+      parentUniqueId: Play.dll/[Play][NodeTests][suite]
+    m_ResultText: NodeTestsZeroCompareTo (0.000s)
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 1fd82d12
+      m_LastClickedID: 304994335
+      m_ExpandedIDs: 46e97591966de4addd7342e3f08e6405a28429119f60371479d70f433ab4f54dffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategoryMask: 0
+      availableCategories:
+      - Uncategorized
+    m_SelectedOption: 0
+  m_EditModeTestListGUI:
+    m_Window: {fileID: 14}
+    m_NewResultList:
+    - id: 1000
+      uniqueId: '[MalakaisNineLives][suite]'
+      name: MalakaisNineLives
+      fullName: MalakaisNineLives
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    m_ResultText: 
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 966de4adffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategoryMask: 0
+      availableCategories:
+      - Uncategorized
+--- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -550,14 +1176,14 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Timeline
-    m_Image: {fileID: -9173288242387172643, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: 2263789160270303489, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 2458
-    y: 715
-    width: 658
-    height: 643
+    x: 746
+    y: 531
+    width: 613
+    height: 460
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -571,7 +1197,7 @@ MonoBehaviour:
   m_SequencePath:
     m_SelectionRoot: 0
     m_SubElements: []
---- !u!114 &23
+--- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -587,7 +1213,7 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Animator
-    m_Image: {fileID: -1673928668082335149, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: 663490763026382308, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
@@ -754,7 +1380,7 @@ MonoBehaviour:
   m_CurrentEditor: 1
   m_LayerEditor:
     m_SelectedLayerIndex: 0
---- !u!114 &24
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -770,7 +1396,7 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Animation
-    m_Image: {fileID: -8166618308981325432, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: 1561878555887300916, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
@@ -785,7 +1411,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_LastSelectedObjectID: -51638
---- !u!114 &25
+--- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -813,7 +1439,7 @@ MonoBehaviour:
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
---- !u!114 &26
+--- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -829,14 +1455,14 @@ MonoBehaviour:
   m_MaxSize: {x: 10000, y: 10000}
   m_TitleContent:
     m_Text: Project
-    m_Image: {fileID: -5467254957812901981, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -7501376956915960154, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1721
-    y: 715
-    width: 736
-    height: 643
+    x: 0
+    y: 531
+    width: 745
+    height: 460
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -854,22 +1480,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Script/Player
+    - Assets/Tests/TestScenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Script/Player
+  - Assets/Tests/TestScenes
   m_LastFoldersGridSize: 96
-  m_LastProjectPath: C:\Users\Celine Fong\Desktop\ECE493\malakai-nine-lives
+  m_LastProjectPath: C:\Users\krist\OneDrive\Desktop\malakai-nine-lives
   m_LockTracker:
     m_IsLocked: 1
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: de6c0000
-    m_LastClickedID: 27870
-    m_ExpandedIDs: 000000009a6c00009c6c00009e6c0000a06c0000a26c0000a46c0000a66c0000a86c0000aa6c0000ac6c0000ae6c0000
+    m_SelectedIDs: c46f0000
+    m_LastClickedID: 28612
+    m_ExpandedIDs: 000000000a6e00000c6e00000e6e0000fe6e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -885,7 +1511,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 13}
+      m_ClientGUIView: {fileID: 7}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -897,7 +1523,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009a6c00009c6c00009e6c0000a06c0000a26c0000a46c0000a66c0000a86c0000aa6c0000ac6c0000ae6c0000
+    m_ExpandedIDs: 000000000a6e00000c6e00000e6e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -924,7 +1550,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300003e6a0000186d00009c790000827400000c6000001c6000002e60000042600000546000005c6000006e600000786000008a6000009c600000a6600000ac600000c4600000de600000ea600000fc6000002e610000386100004a6100005c6100006e61000080610000ac6d000096730000a05e00004c6b0000fa790000d2720000d67f0000207c0000027900003e720000c66b0000d4760000347a0000f67c0000826f0000cc740000d2750000367e0000da7b0000e0780000a85e0000426c0000f0710000466800006a790000e6d8000022d90000fed8000006d900000ed900002ed90000eed80000f2d8000002d900001ad90000f6d8000036d90000ead800001ed900002ad9000032d9000016d90000e2d800000ad90000fad8000012d9000026d90000e8d50000c05e00007eeb000084eb0000defa00001a5f000006800000ee5e00002a5f0000d86d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -941,7 +1567,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 13}
+      m_ClientGUIView: {fileID: 7}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -953,7 +1579,7 @@ MonoBehaviour:
     m_GridSize: 96
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
---- !u!114 &27
+--- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -969,14 +1595,14 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Inspector
-    m_Image: {fileID: -2667387946076563598, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -6905738622615590433, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 3118
-    y: 81
-    width: 320
-    height: 1277
+    x: 1561
+    y: 73
+    width: 358
+    height: 918
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -994,7 +1620,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewWindow: {fileID: 0}
---- !u!114 &28
+--- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1010,14 +1636,14 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Hierarchy
-    m_Image: {fileID: 7966133145522015247, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -590624980919486359, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1721
-    y: 81
-    width: 340
-    height: 613
+    x: 0
+    y: 73
+    width: 332
+    height: 437
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -1025,9 +1651,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: f4dafeff
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: fcdbfeff3cdcfeffc8ddfeffcae1feffa0e5feff72e9feffbee9feff6aedfeff7cf0feff12f4feff74f4feff7cf8feff14fcfeff20fffeff1e00ffff6200ffff8200ffff2038fffff839ffff903affff6a40ffff6041ffff624affff6a50ffffe057ffff905fffff1060ffff9060ffff1061ffff7e76ffff4077fffff477ffffea78ffff7a7affff1a7bffffd07cffffa488ffff1889ffff388bffff7e8effff2890ffffd490ffffc291fffff891ffffc292ffff5893ffffd293ffff0694ffffe6a5ffffc2abffff1cc1ffffccc1ffff64c3ffff4ac4ffffc2d0ffffecdaffff54f1ffff28f5ffff26fbffffe69f0000f49f000086a6000098a600005aa7000068a7000082a70000eea8000006a900000ca90000dab100003eb3000022bd000042be00004cbe00005abf000072bf000078bf00004ec6000058c6000070c8000088c80000e4c90000fcc9000068ca000082ca00008cca0000fed5000018d600008ada0000a2da0000c2dc0000dcdc0000e6dc00009ce00000b4e000000ee1000028e1000042e1000034e70000
+      m_ExpandedIDs: bce9fffff0e9ffff8eedffff0eeeffff42eeffffb4eeffff34efffff68efffff0cf3ffffa0f3ffffd4f3ffff3cf4ffffe0f4ffff6cf5ffff28f6fffff0f6ffff2cf7ffffaef7ffff40f9ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1043,7 +1669,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 12}
+        m_ClientGUIView: {fileID: 6}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -1051,7 +1677,7 @@ MonoBehaviour:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: 4c969a2b90040154d917609493e03593
---- !u!114 &29
+--- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1067,7 +1693,7 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Scene
-    m_Image: {fileID: 2593428753322112591, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: 2318424515335265636, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
@@ -1331,9 +1957,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2.8333018, y: -2.7317088, z: -2}
+    m_Target: {x: 0.9978567, y: 0.03155442, z: -6.5052238}
     speed: 2
-    m_Value: {x: 2.8333018, y: -2.7317088, z: -2}
+    m_Value: {x: 0.9978567, y: 0.03155442, z: -6.5052238}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1384,9 +2010,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1.1357816
+    m_Target: 7.2542987
     speed: 2
-    m_Value: 1.1357816
+    m_Value: 7.2542987
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1411,7 +2037,7 @@ MonoBehaviour:
   m_SceneVisActive: 1
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
---- !u!114 &30
+--- !u!114 &23
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1427,14 +2053,14 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Game
-    m_Image: {fileID: -6423792434712278376, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -2087823869225018852, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 2062
-    y: 81
-    width: 1054
-    height: 613
+    x: 333
+    y: 73
+    width: 1026
+    height: 437
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -1481,29 +2107,29 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 1054
-      height: 592
-    m_Scale: {x: 0.54814816, y: 0.54814816}
-    m_Translation: {x: 527, y: 296}
+      width: 1026
+      height: 416
+    m_Scale: {x: 0.38518518, y: 0.38518518}
+    m_Translation: {x: 513, y: 208}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -961.4189
+      x: -1331.8269
       y: -540
-      width: 1922.8378
+      width: 2663.6538
       height: 1080
     m_MinimalGUI: 1
-  m_defaultScale: 0.54814816
-  m_LastWindowPixelSize: {x: 1054, y: 613}
+  m_defaultScale: 0.38518518
+  m_LastWindowPixelSize: {x: 1026, y: 437}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
---- !u!114 &31
+--- !u!114 &24
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1519,14 +2145,14 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Console
-    m_Image: {fileID: -4327648978806127646, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: 111653112392082826, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 711
-    width: 1475
-    height: 648
+    y: 532
+    width: 745
+    height: 459
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
