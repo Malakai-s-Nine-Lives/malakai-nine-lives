@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
+/*
+ * This module satisfies:
+ *   - Functional requirement 2.3
+ */
 public class PathRequest : MonoBehaviour
 {
     // Queue to store requests to be made

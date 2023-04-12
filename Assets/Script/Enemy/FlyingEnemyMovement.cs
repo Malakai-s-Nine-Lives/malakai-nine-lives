@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * This module satisfies:
+ *   - Functional requirement 2.3
+ */
 public class FlyingEnemyMovement : MonoBehaviour
 {
     public Transform player;  // To react to player movement

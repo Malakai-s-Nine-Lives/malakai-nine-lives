@@ -1,6 +1,10 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
+/*
+ * This module satisfies:
+ *   - Functional requirement 9.2
+ */
 public class DoorController : MonoBehaviour
 {
     private bool doorOpened = false;

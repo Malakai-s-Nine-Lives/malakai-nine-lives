@@ -1,6 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+ * This module satisfies:
+ *   - Functional requirement 2.1
+ *   - Functional requirement 10.1
+ */
 public class ChangeScene : MonoBehaviour
 {
     public void changeScene()

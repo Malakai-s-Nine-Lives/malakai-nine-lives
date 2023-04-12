@@ -2,6 +2,13 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+
+/*
+ * This module satisfies:
+ *   - Functional requirement 2.7
+ *   - Functional requirement 8.1
+ *   - Functional requirement 9.1
+ */
 public class PlayerProgress : MonoBehaviour
 {
     // For setting progress and next scene

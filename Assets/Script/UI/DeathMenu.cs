@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+ * This module satisfies:
+ *   - Functional requirement 5.1
+ *   - Functional requirement 5.2
+ */
 public class DeathMenu : MonoBehaviour
 {
     public GameObject BarsUI;

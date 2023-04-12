@@ -1,5 +1,10 @@
 using UnityEngine;
 
+
+/*
+ * This module satisfies:
+ *   - Functional requirement 3.1
+ */
 public class PlayerAttack : MonoBehaviour
 {
     // For controlling player attack

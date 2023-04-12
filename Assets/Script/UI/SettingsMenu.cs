@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+/*
+ * This module satisfies:
+ *   - Functional requirement 1.2
+ */
 public class SettingsMenu : MonoBehaviour
 {
     public MainMenu script;

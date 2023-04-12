@@ -1,5 +1,9 @@
 using UnityEngine;
 
+/*
+ * This module satisfies:
+ *   - Functional requirement 2.6
+ */
 public class StationaryHazard : MonoBehaviour
 {
     public int damage = 10;

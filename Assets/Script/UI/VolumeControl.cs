@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ * This module satisfies:
+ *   - Functional requirement 4.2
+ */
 public class VolumeControl : MonoBehaviour
 {
     public Slider volumeSlider;

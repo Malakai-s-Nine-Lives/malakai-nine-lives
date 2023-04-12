@@ -1,5 +1,10 @@
 using UnityEngine;
 
+/*
+ * This module satisfies:
+ *   - Functional requirement 2.2
+ *   - Functional requirement 3.3
+ */
 public class PlayerMovement : MonoBehaviour
 {
     // For controlling player movement

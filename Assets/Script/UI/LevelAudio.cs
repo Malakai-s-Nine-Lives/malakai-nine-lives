@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * This module satisfies:
+ *   - Functional requirement 1.2
+ */
 public class LevelAudio : MonoBehaviour
 {
     // Start is called before the first frame update
