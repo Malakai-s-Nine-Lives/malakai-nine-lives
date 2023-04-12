@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+ * This module satisfies:
+ *   - Functional requirement 2.8
+ *   - Functional requirement 4.1
+ *   - Functional requirement 4.3
+ */
 public class PauseMenu : MonoBehaviour
 {
     public static bool GamePaused = false;

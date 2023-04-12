@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * This module satisfies:
+ *   - Functional requirement 2.4
+ */
 public class PlatformPatrollingEnemy : PatrollingEnemy
 {
     protected virtual void Start()

@@ -1,5 +1,10 @@
 using UnityEngine;
 
+/*
+ * This module satisfies:
+ *   - Functional requirement 6.1
+ *   - Functional requirement 8.1
+ */
 public class EnemyHealth : MonoBehaviour
 {
     // For setting health and giving progress points to player

@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+/*
+ * Not a part of a functional requirement but this module improves gameplay
+ */
 public class DialogueManager : MonoBehaviour
 {
     public TMP_Text dialogueText;

@@ -1,5 +1,9 @@
 using UnityEngine;
 
+/*
+ * This module satisfies:
+ *   - Functional requirement 7.2
+ */
 public class EnemyAttack : MonoBehaviour
 {
     // For controlling enemy attacks

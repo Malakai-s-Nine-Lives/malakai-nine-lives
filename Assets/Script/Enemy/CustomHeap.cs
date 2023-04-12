@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
+/*
+ * This module satisfies:
+ *   - Functional requirement 2.3
+ */
 public class CustomHeap<T> where T : IHeapItem<T>
 {
     T[] items;  // Items in our heap

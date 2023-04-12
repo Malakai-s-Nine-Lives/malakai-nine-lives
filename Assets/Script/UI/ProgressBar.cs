@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ * This module satisfies:
+ *   - Functional requirement 2.7
+ *   - Functional requirement 8.1
+ *   - Functional requirement 9.1
+ */
 public class ProgressBar : MonoBehaviour
 {
     public Slider slider;

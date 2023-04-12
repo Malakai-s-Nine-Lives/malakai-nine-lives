@@ -1,6 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+ * This module help satisfy:
+ *   - Functional requirement 3.2
+ *   - Functional requirement 5.1
+ *   - Functional requirement 7.1
+ *   - Functional requirement 7.2
+ */
 public class PlayerHealth : MonoBehaviour
 {
     // For setting health

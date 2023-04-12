@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/*
+ * This module satisfies:
+ *   - Functional requirement 1.1
+ */
 public class MainMenu : MonoBehaviour
 {
     public void Start()
