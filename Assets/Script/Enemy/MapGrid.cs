@@ -19,7 +19,11 @@ public class MapGrid : MonoBehaviour
         gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
         gridSizeY = Mathf.RoundToInt(gridWorldSize.y / nodeDiameter);
         CreateGrid();
+    }
 
+    public void Construct(Node[,] inputGrid)
+    {
+        grid = inputGrid;
     }
 
     public int MaxSize  // The size of our grid
